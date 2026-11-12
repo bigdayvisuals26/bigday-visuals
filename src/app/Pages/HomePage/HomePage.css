@@ -1,0 +1,344 @@
+.HeroSection{
+    background: url(/Images/HeroBg.webp) no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    padding:100px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 496px;
+        background: url(/Images/HeroShape.png) no-repeat;
+    }
+}
+
+.HeroSection .HeroTexedDiv{
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+
+.HeroSection .HeroTexedDiv .HeroHeading h1{
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 99px;
+    letter-spacing: -1.92px;
+    position: relative;
+    color: var(--fourth-color);
+}
+
+.HeroSection .HeroTexedDiv .HeroHeading p{
+    font-size: 22px;
+    line-height: 1.5454em;
+    color: var(--fifth-color);
+}
+
+.HeroSection .pxl-divider-vertical{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+}
+.HeroSection .pxl-divider-vertical :is(.pxl-section-line1, .pxl-section-line2, .pxl-section-line3, .pxl-section-line4){
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(55, 55, 55, .57);
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 60px;
+        animation: pxl_grid_fall 10s linear infinite;
+        background: linear-gradient(0deg, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, 1e-8) 100%);
+    }
+}
+.HeroSection .pxl-divider-vertical .pxl-section-line2{
+   left: 33%;
+}
+.HeroSection .pxl-divider-vertical .pxl-section-line3{
+   left: 67%;
+}
+.HeroSection .pxl-divider-vertical .pxl-section-line4{
+   left: 99%;
+}
+
+/* HeroContentDiv Started  */
+
+.HeroSection .HeroContentDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   
+}
+.HeroSection .HeroContentDiv .ContentHeading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;   
+}
+.HeroSection .HeroContentDiv .ContentHeading .HeroHeading  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;  
+    
+}
+.HeroSection .HeroContentDiv .ContentHeading .HeroHeading h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.26666em;
+    letter-spacing: -1.92px;
+    position: relative;
+    color: var(--fourth-color);
+    text-align: center;
+    
+}
+/* .HeroSection .HeroContentDiv .ContentHeading .HeroHeading h2 span.pxl-title--highlight{
+    font-family: inherit;
+    font-style: normal;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--gradient-color-from) 50%, var(--gradient-color-to) 100%);
+    animation: gradient-animation 6s infinite ease-in-out;
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    letter-spacing: -1.92px;
+    font-weight: 700;
+    -webkit-text-fill-color: transparent;
+} */
+.HeroSection .HeroContentDiv .ContentHeading .HeroHeading p{
+    font-size: 20px;
+    line-height: 34px;
+    color: var(--fifth-color);
+    max-width: 716px;
+    margin: 0 auto;
+    text-align: center;
+}
+.HeroSection .HeroContentDiv .HeroContentData{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px 60px;
+}
+.HeroSection .HeroContentDiv .HeroContentData .HerocontItems{
+    position: relative;
+    padding: 64px 31px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &:hover{
+        background-color: #DDDDDD0F;
+    }
+    &:hover .htitle a::before{
+        width: 100%;
+    }
+}
+.HeroSection .HeroContentDiv .HeroContentData .HerocontItems span svg{
+   color: var(--secondary-color);
+}
+.HeroSection .HeroContentDiv .HeroContentData .HerocontItems .htitle{
+   display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.HeroSection .HeroContentDiv .HeroContentData .HerocontItems .htitle a {
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 20px;
+    transition: all .5s ease-in-out;
+    color: var(--fourth-color);
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background-color: var(--secondary-color);
+        transition: all .5s ease-in-out;
+    }
+}
+.HeroSection .HeroContentDiv .HeroContentData .HerocontItems .htitle p {
+    font-size: 16px;
+    color: var(--fifth-color);
+    
+}
+
+
+
+
+/* ContactSection Started  */
+
+.ContactSection {
+    padding: 100px 0px;
+    position: relative;
+    min-height: 100vh;
+    /* &:before{
+        content: "";
+        position: absolute;
+        top: inherit;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 496px;
+        background: url(/Images/Lines.webp) no-repeat;
+
+    } */
+}
+.ContactSection .ContactData{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.ContactSection .ContactData .ContactBottomDiv{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.ContactSection .ContactData .ContactBottomDiv .TpCL{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 50px;
+}
+.ContactSection .ContactData .ContactBottomDiv .TpCL h2{
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.26666em;
+    letter-spacing: -1.92px;
+    position: relative;
+    color: var(--fourth-color);
+}
+.ContactSection .ContactData .ContactBottomDiv .TpCR form{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.ContactSection .ContactData .ContactBottomDiv .TpCR form .FormControled.Two{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 65px;
+}
+.ContactSection .ContactData .ContactBottomDiv .TpCR form .FormControled :is(input , textarea) {
+    background: transparent;
+    outline: none;
+    border-color: #3A4051 !important;
+    min-height: 57px;
+    background-color: #4950603B;
+    border-radius: 200px 200px 200px 200px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #9D9D9D;
+    padding: 10px 170px 10px 30px;
+}
+.ContactSection .ContactData .ContactBottomDiv .TpCR form .FormControled :is(input , textarea)::placeholder{
+    font-size: 16px;
+    font-weight: 600;
+    color: #7a7a7a;
+}
+
+.ContactSection .ContactData .ContactBottomDiv .TpCR form .FormControled textarea{
+    border-radius: 20px;
+}
+.ContactSection .ContactData .ContactBottomDiv .TpCR form .select-wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border-color: #3A4051 !important;
+    min-height: 57px;
+    background-color: #4950603B;
+    border-radius: 200px 200px 200px 200px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #9D9D9D;
+    padding: 10px 30px 10px 30px;
+}
+.ContactSection .ContactData .ContactBottomDiv .TpCR form .select-wrapper select.custom-select{
+    background: transparent !important;
+    font-size: 18px;
+    font-weight: 400;
+    color: #9D9D9D;
+    border: none !important;
+    outline: none;
+    width: 100%;
+}
+
+
+
+/* ContactSection Ended */
+
+
+
+/* WhatWeDoSection Started  */
+
+.WhatWeDoSection{
+    padding: 100px 0px;
+    position: relative;
+    background: var(--card);
+}
+.WhatWeDoSection .WhatWeDoData{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoHeading h2{
+    font-size: 60px;
+    font-weight: 400;
+    color: var(--foreground);
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoHeading h2 .text-gold-gradient{
+    background: var(--gradient-gold);
+    color: #0000;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoContent ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoContent ul li{
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0px;
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoContent ul li:last-child{
+    border-bottom: none;
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoContent ul li:hover a{
+    transform: translate(10px);
+    transition: transform .2s ease-in-out;
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoContent ul li a {
+    color: var(--foreground);
+    font-size: 36px;
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoContent ul li span{
+    color: var(--gold);
+    font-size: 14px;
+}
+.WhatWeDoSection .WhatWeDoData .whatWeDoContent ul li p{
+    color: var(--muted-foreground);
+}
+
+
+/* WhatWeDoSection Ended */

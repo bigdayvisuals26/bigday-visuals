@@ -1,0 +1,183 @@
+.FooterSection{
+    background: var(--background);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s; 
+    border-top: 1px solid var(--border);
+}
+.FooterSection .tp{
+   background: var(--background);
+    border-bottom: 1px solid var(--border);
+    padding: 142px 0px 81px 0px;
+}
+.FooterSection .tp .TopFooter{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+.FooterSection .tp .TopFooter .LeftFtr{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+}
+.FooterSection .tp .TopFooter :is(.LeftFtr ul , .RytFtr ul ){
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.FooterSection .tp .TopFooter :is(.LeftFtr ul li a, .RytFtr ul li a ){
+    color: var(--muted-foreground);
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--muted-foreground);
+    position: relative;
+    &::after{
+        position: absolute;
+        content: " ";
+        bottom: 0;
+        left: 0;
+    }
+}
+.FooterSection .tp .TopFooter :is(.LeftFtr ul li a, .RytFtr ul li a ):hover{
+    border-bottom: 1px solid var(--foreground);
+    color: var(--foreground);
+    &::after{
+        position: absolute;
+        content: " ";
+        bottom: 0;
+        left: 0;
+    }
+}
+.FooterSection .tp .TopFooter .RytFtr{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: end;
+}
+.FooterSection .tp .TopFooter .MidFtr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.FooterSection .btp{
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
+.FooterSection .btp .BtmFt{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.FooterSection .btp .BtmFt p{
+    color: var(--muted-foreground);
+    font-size: 14px;
+}
+.FooterSection .btp .BtmFt .SocialLinks{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.FooterSection .btp .BtmFt .SocialLinks a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-gold);
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    &:hover{
+        transform: scale(1.01);
+    }
+}
+.FooterSection .btp .BtmFt .SocialLinks a svg{
+    color: #151515;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pxl-divider-border .pxl-divider-border-top {
+    height: 236px;
+    width: 1px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    animation:pxl_spin_180 1e3ms linear;
+}
+.pxl-divider-border .pxl-divider-border-bottom-effect {
+    display: block;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    bottom: -80px
+}
+
+.pxl-divider-border .pxl-divider-border-bottom {
+    background-color: initial;
+    height: 1010px;
+    width: 1010px;
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid #2c2b2b;
+    left: 50%;
+    transform: translate(-50%,50%)
+}
+
+.pxl-divider-border .pxl-divider-border-bottom .loader-line-mask {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100%;
+    margin-left: -505px;
+    margin-top: -505px;
+    overflow: hidden;
+    transform-origin: 505px 505px;
+    animation: pxl_spin 1.2s infinite linear
+}
+
+.pxl-divider-border .pxl-divider-border-bottom .loader-line-mask .loader-line {
+    height: 1010px;
+    width: 1010px;
+    border-radius: 50%;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,.44)),to(rgba(255,255,255,0)));
+    background-image: -webkit-linear-gradient(to bottom,rgba(255,255,255,.44),rgba(255,255,255,0));
+    background-image: -moz-linear-gradient(to bottom,rgba(255,255,255,.44),rgba(255,255,255,0));
+    background-image: -ms-linear-gradient(to bottom,rgba(255,255,255,.44),rgba(255,255,255,0));
+    background-image: -o-linear-gradient(to bottom,rgba(255,255,255,.44),rgba(255,255,255,0));
+    background-image: linear-gradient(to bottom,rgba(255,255,255,.44),rgba(255,255,255,0));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(255, 255, 255, 0.44)',endColorStr='rgba(255, 255, 255, 0)');
+    background-color: initial;
+    position: relative
+}
+
+.pxl-divider-border .pxl-divider-border-bottom .loader-line-mask .loader-line:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    background-color: #0f0f0f;
+    z-index: 99;
+    border-radius: inherit
+}
