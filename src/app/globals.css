@@ -168,3 +168,32 @@ span.pxl-title--highlight{
     background-position: 0
   }
 }
+
+
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+  transition: transform .3s, box-shadow .3s
+}
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, .5)
+}
+.wa-float svg {
+  width: 28px;
+  height: 28px;
+  fill: white
+}

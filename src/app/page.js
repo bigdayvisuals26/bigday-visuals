@@ -1,6 +1,6 @@
 // import Image from "next/image";
 
-import ContactPage from "./contact/page";
+// import ContactPage from "./contact/page";
 import HomePage from "./Pages/HomePage/HomePage";
 
 {/* <Image
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
     <HomePage/>
-    <ContactPage/>
+    {/* <ContactPage/> */}
      
     </>
   );

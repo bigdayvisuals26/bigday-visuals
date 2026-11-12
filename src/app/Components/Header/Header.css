@@ -1,0 +1,185 @@
+
+/* Top Bar */
+
+.topbar{
+    background:#111;
+    color:#fff;
+    height:45px;
+    overflow:hidden;
+}
+
+.topbar-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:45px;
+    gap:30px;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    min-width:160px;
+    justify-content: space-evenly;
+}
+
+.social-icons a{
+    color:#fff;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    color:#d4a762;
+}
+
+.marquee{
+    flex:1;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.marquee-content{
+    display:inline-flex;
+    animation:marquee 25s linear infinite;
+}
+
+.marquee-content span{
+    margin-right:70px;
+    color:#ddd;
+    font-size:14px;
+}
+
+@keyframes marquee{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+.top-contact{
+    display:flex;
+    gap:25px;
+    font-size:14px;
+    min-width:300px;
+    justify-content:flex-end;
+}
+
+.top-contact span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* Header */
+
+.main-header{
+    background:#fff;
+    padding:18px 0;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.main-header .NavLogoDiv{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.main-header .NavLogoDiv .logo-mark{
+    width: 42px;
+    height: 42px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: 18px;
+    color: #06080C;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+.main-header .NavLogoDiv .LogTexted h6{
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.main-header .NavLogoDiv .LogTexted h6 span{
+    color: var(--SpanPrimaryColor);
+}
+
+.nav-menu{
+    gap:35px;
+}
+
+.nav-menu a{
+    color:#222 !important;
+    font-weight:600;
+    position:relative;
+}
+
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#d4a762;
+    transition:.4s;
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+}
+
+.phone-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.phone-icon{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#d4a762;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.phone-box small{
+    color:#777;
+}
+
+.phone-box h6{
+    margin:0;
+    font-weight:700;
+}
+
+/* Mobile */
+
+@media(max-width:991px){
+
+.topbar{
+display:none;
+}
+
+.phone-box{
+margin-top:30px;
+}
+
+.nav-menu{
+gap:10px;
+}
+
+}

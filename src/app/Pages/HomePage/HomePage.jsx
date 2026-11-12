@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './HomePage.css'
 import { Button, Container, Form } from 'react-bootstrap'
 import Skiper49 from '@/app/Components/HeroCarousel/HeroCarousel'
@@ -10,10 +10,12 @@ import { PiBookOpenUserFill } from 'react-icons/pi'
 import { BsCameraReelsFill } from 'react-icons/bs'
 import { TbCameraHeart } from 'react-icons/tb'
 import { RiCameraLensAiLine } from 'react-icons/ri'
-import { FaAngleDoubleDown, FaPhoneAlt } from 'react-icons/fa'
+import { FaAngleDoubleDown, FaArrowRight, FaPhoneAlt, FaPlay, FaStaylinked } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
-import Footer from "@/app/Components/Footers/Footer";
 import AboutUs from "../About-Us/AboutUs";
+import Image from "next/image";
+import "glightbox/dist/css/glightbox.min.css";
+import CountUp from "react-countup";
 
 function HomePage() {
   const [selectedValue, setSelectedValue] = useState("");
@@ -63,10 +65,110 @@ function HomePage() {
     },
   ];
 
+  const generationStats = [
+    { id: 1, value: 10, suffix: "k+", label: "Products Sold" },
+    { id: 2, value: 35, suffix: "", label: "Years Service" },
+    { id: 3, value: 450, suffix: "", label: "Outlets Worldwide" },
+    { id: 4, value: 1000, suffix: "+", label: "Satisfied Customers" },
+  ];
+  const [statsRefreshKey, setStatsRefreshKey] = useState(0);
+
+  useEffect(() => {
+    const refreshStats = () => setStatsRefreshKey((prev) => prev + 1);
+    window.addEventListener("focus", refreshStats);
+
+    return () => window.removeEventListener("focus", refreshStats);
+  }, []);
+
+
+  // Gallery Data Started  
+
+  const galleryData = [
+  {
+    id: 1,
+    title: "Luxury Sofa",
+    category: "living",
+    image: "/Images/gallery1.avif",
+  },
+  {
+    id: 2,
+    title: "Wooden Dining Table",
+    category: "dining",
+    image: "/Images/gallery2.avif",
+  },
+  {
+    id: 3,
+    title: "Modern Bed",
+    category: "bedroom",
+    image: "/Images/gallery3.avif",
+  },
+  {
+    id: 4,
+    title: "Office Desk",
+    category: "office",
+    image: "/Images/gallery4.avif",
+  },
+  {
+    id: 5,
+    title: "Luxury Chair",
+    category: "living",
+    image: "/Images/gallery5.avif",
+  },
+  {
+    id: 6,
+    title: "Outdoor Furniture",
+    category: "outdoor",
+    image: "/Images/gallery6.avif",
+  },
+  ];
+  const [activeCategory, setActiveCategory] = useState("all");
+  const filteredGallery =
+  activeCategory === "all"
+    ? galleryData
+    : galleryData.filter((item) => item.category === activeCategory);
+
+  // Gallery Data Ended 
 
 
   return (
     <>
+
+    <Link
+        href="https://wa.me/916280035719"
+        target="_blank"
+        className="wa-float"
+        title="Chat on WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+      </Link>
+
+      <section className="HeroMainSection">
+        <Container fluid className="container-xl">
+          <div className="d">
+            <p>Pathankot · Punjab · Since 2026</p>
+            <div className="s">
+              <h2>
+                If it's your big day, <span className="pxl-title--highlight">Big day </span> 
+              </h2>
+              <span>Big Day</span>
+              <p>it deserves Bigday Visuals</p>
+            </div>
+
+            <div className="ss">
+              <Button>WATCH OUR WORK</Button>
+              <Link href="https://www.instagram.com" target="_blank">
+                WHATSAPP US
+              </Link>
+            </div>
+
+
+
+          </div>
+        </Container>
+      </section>
+
       <section className="HeroSection">
           <Container fluid className="container-xl">
               <div className="HeroTexedDiv">
@@ -114,6 +216,41 @@ function HomePage() {
 
       </section>
 
+      <section className="ExploreKeySec">
+        <div className="ExploreItems">
+          <div className="ExploreTrack">
+            {[...Array(2)].map((_, i) => (
+              <React.Fragment key={i}>
+                <Link href="#">Birthday</Link>
+                <Link href="#">
+                  <FaStaylinked />
+                </Link>
+                <Link href="#">Wedding</Link>
+                <Link href="#">
+                  <FaStaylinked />
+                </Link>
+                <Link href="#">Pre-Wedding</Link>
+                <Link href="#">
+                  <FaStaylinked />
+                </Link>
+                <Link href="#">Reels & Editing</Link>
+                <Link href="#">
+                  <FaStaylinked />
+                </Link>
+                <Link href="#">Maternity & Baby</Link>
+                <Link href="#">
+                  <FaStaylinked />
+                </Link>
+                <Link href="#">Every Moment. Your Bigday.</Link>
+                <Link href="#">
+                  <FaStaylinked />
+                </Link>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="WhatWeDoSection">
         <Container fluid className="container-xl">
           <div className="WhatWeDoData">
@@ -140,6 +277,104 @@ function HomePage() {
       </section>
 
       <AboutUs/>
+
+      <section className="GallerySec" id="Services">
+        <Container fluid className="container-xl">
+
+          <div className="GalleryData">
+
+            <div className="GalleryHeading">
+              <span>Our Collection</span>
+              <h2>Discover Beautiful Furniture</h2>
+              <p> Explore our premium collection of handcrafted furniture designed
+                for comfort, elegance, and modern living.</p>
+            </div>
+
+            <div className="GalleryFilter">
+
+              <button className={activeCategory === "all" ? "active" : ""} onClick={() => setActiveCategory("all")}>
+                All
+              </button>
+
+              <button className={activeCategory === "Wedding" ? "active" : ""} onClick={() => setActiveCategory("Wedding")} >
+                Wedding
+              </button>
+
+              <button className={activeCategory === "Pre-Wedding" ? "active" : ""} onClick={() => setActiveCategory("Pre-Wedding")} >
+                Pre-Wedding
+              </button>
+
+              <button className={activeCategory === "Birthday & Events" ? "active" : ""} onClick={() => setActiveCategory("Birthday & Events")}>
+                Birthday & Events
+              </button>
+
+              <button className={activeCategory === "office" ? "active" : ""} onClick={() => setActiveCategory("office")}>
+                Maternity & Baby
+              </button>
+
+              <button className={activeCategory === "outdoor" ? "active" : ""} onClick={() => setActiveCategory("outdoor")} >
+                Portfollio
+              </button>
+              <button className={activeCategory === "outdoor" ? "active" : ""} onClick={() => setActiveCategory("outdoor")} >
+                Reels & Editing
+              </button>
+
+            </div>
+
+            <div className="GalleryCardDiv">
+              {filteredGallery.map((item) => (
+                <div className="ss" key={item.id}>
+                  <div className="GalleryItem">
+                    <Image src={item.image} alt={item.title} width={380} height={475} priority />
+                    <div className="GalleryOverlay">
+                      <h4>{item.title}</h4>
+                      <span>{item.category}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </Container>
+      </section>
+
+      <section className="NextGenSection">
+        <Container fluid className="container-xl">
+          <div className="NextGenData">
+            <div>
+              <VideoButton />
+            </div>
+            <h2>Next-Generation Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <ComnBtn text="View all products" href="#" />
+          </div>
+        </Container>
+        <div className="GenrationCount" key={statsRefreshKey}>
+          {generationStats.map((item) => (
+            <div className="GenCountItem" key={item.id}>
+              <h4>
+                <CountUp
+                  key={`${item.id}-${statsRefreshKey}`}
+                  start={0}
+                  end={item.value}
+                  duration={2.5}
+                  enableScrollSpy={true}
+                  scrollSpyOnce={true}
+                />
+                {item.suffix}
+              </h4>
+              <p>{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
       
      
 
@@ -245,7 +480,6 @@ function HomePage() {
 
 
 
-      <Footer/>
 
 
 
@@ -255,3 +489,55 @@ function HomePage() {
 }
 
 export default HomePage
+
+
+export function ComnBtn({ href, text }) {
+  return (
+    <div className="ComonBtn">
+      <Link href={href}>
+        {text}{" "}
+        <span>
+          <FaArrowRight />
+        </span>
+      </Link>
+    </div>
+  );
+}
+
+export function VideoButton() {
+  useEffect(() => {
+    let lightbox;
+    import("glightbox").then(({ default: GLightbox }) => {
+      lightbox = GLightbox({
+        selector: ".glightbox-video",
+        autoplayVideos: true,
+      });
+    });
+    return () => {
+      if (lightbox) lightbox.destroy();
+    };
+  }, []);
+  const text = " PLAY VIDEO • PLAY VIDEO • ";
+  return (
+    <a
+      href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      className="videoBtn glightbox-video" >
+      <svg className="circleText" viewBox="0 0 200 200">
+        <defs>
+          <path
+            id="circlePath"
+            d="M100,100 m-65,0 a65,65 0 1,1 130,0 a65,65 0 1,1 -130,0"
+          />
+        </defs>
+        <text>
+          <textPath href="#circlePath">
+            {text.repeat(3)}
+          </textPath>
+        </text>
+      </svg>
+      <div className="playIcon">
+        <FaPlay />
+      </div>
+    </a>
+  );
+}
