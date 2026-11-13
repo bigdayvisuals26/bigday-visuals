@@ -73,7 +73,16 @@
 }
 .FooterSection .btp .BtmFt p{
     color: var(--muted-foreground);
-    font-size: 14px;
+    font-size: 12px;
+    letter-spacing: 3.6px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    text-transform: uppercase;
+}
+.FooterSection .btp .BtmFt p a{
+    color: var(--gold-soft);
+    font-style: italic;
+    font-family: var(--secondary-font);
 }
 .FooterSection .btp .BtmFt .SocialLinks{
     display: flex;

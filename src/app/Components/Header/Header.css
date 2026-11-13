@@ -2,10 +2,14 @@
 /* Top Bar */
 
 .topbar{
-    background:#111;
-    color:#fff;
+    background:var(--primary-foreground);
+    color:var(--accent-foreground);
     height:45px;
     overflow:hidden;
+    font-family:var(--primary-font);
+    letter-spacing:1.6px;
+    font-weight:400;
+    border-bottom:1px solid var(--border);
 }
 
 .topbar-inner{
@@ -24,12 +28,15 @@
 }
 
 .social-icons a{
-    color:#fff;
+    color:var(--accent-foreground);
     transition:.3s;
+    font-size:16px;
+    font-weight:600;
 }
 
 .social-icons a:hover{
-    color:#d4a762;
+    color:var(--gold-soft);
+    transform: scale(1.1); 
 }
 
 .marquee{
@@ -45,8 +52,9 @@
 
 .marquee-content span{
     margin-right:70px;
-    color:#ddd;
+    color:var(--accent-foreground);
     font-size:14px;
+
 }
 
 @keyframes marquee{
@@ -73,46 +81,33 @@ transform:translateX(-50%);
     display:flex;
     align-items:center;
     gap:8px;
+    color:var(--accent-foreground);
+    font-size:12px;
 }
+.top-contact span a{
+    color:var(--accent-foreground);
+    font-size:12px;
+}
+
+
 
 /* Header */
 
 .main-header{
-    background:#fff;
+    background: var(--card);
     padding:18px 0;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    box-shadow: var(--shadow-gold);
 }
 
 .main-header .NavLogoDiv{
     display: flex;
     align-items: center;
-    gap: 20px;
+    margin:0;
 }
-.main-header .NavLogoDiv .logo-mark{
-    width: 42px;
-    height: 42px;
-    background: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-weight: 900;
-    font-size: 18px;
-    color: #06080C;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-}
-.main-header .NavLogoDiv .LogTexted h6{
-    font-family: var(--serif);
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: .04em;
-    color: var(--black);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.main-header .NavLogoDiv .LogTexted h6 span{
-    color: var(--SpanPrimaryColor);
+.main-header .NavLogoDiv img{
+    display: block;
+    width: 95px;
+    height: auto;
 }
 
 .nav-menu{
@@ -120,16 +115,19 @@ transform:translateX(-50%);
 }
 
 .nav-menu a{
-    color:#222 !important;
-    font-weight:600;
+    color:var(--secondary-foreground) !important;
+    font-weight:400;
     position:relative;
+    font-family:var(--primary-font);
+    letter-spacing:1.6px;
+    text-transform:uppercase;
 }
 
 .nav-menu a::after{
     content:"";
     position:absolute;
     left:0;
-    bottom:-6px;
+    bottom:-0px;
     width:0;
     height:2px;
     background:#d4a762;
@@ -150,36 +148,94 @@ transform:translateX(-50%);
     width:50px;
     height:50px;
     border-radius:50%;
-    background:#d4a762;
-    color:#fff;
+    background:var(--gold-soft);
+    color:var(--primary-foreground);
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
 .phone-box small{
-    color:#777;
+    color:var(--secondary-foreground);
+    font-family:var(--primary-font);
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    font-size:14px;
 }
 
 .phone-box h6{
     margin:0;
-    font-weight:700;
+    font-weight:400;
+    font-family:var(--primary-font);
+    letter-spacing:1.6px;
+    color:var(--secondary-foreground);
+    font-size:12px;
 }
+
+
+
+
+
+
+
 
 /* Mobile */
 
-@media(max-width:991px){
+@media(max-width:991.98px){
 
-.topbar{
-display:none;
-}
+    .topbar{
+        display:none;
+    }
 
-.phone-box{
-margin-top:30px;
-}
+    .phone-box{
+        margin-top:30px;
+    }
 
-.nav-menu{
-gap:10px;
-}
+    .nav-menu{
+        gap:10px;
+    }
+    .main-header .navbar-toggler {
+        background: var(--gold-soft);
+    }
+
+    .main-header > .container-xl{
+        justify-content: space-between !important;
+    }
+
+    .main-header .NavLogoDiv{
+        margin-right: 12px;
+    }
+
+    .offcanvas-menu{
+        background:var(--gradient-gold);
+        box-shadow: var(--shadow-gold);
+    }
+    .offcanvas-menu .offcanvas-header .offcanvas-title{
+        font-family:var(--primary-font);
+        font-weight:600;
+        font-size:20px;
+    }
+    .offcanvas-menu .offcanvas-body .navbar-nav .nav-link{
+        color: var(--primary-foreground) !important;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: var(--primary-font);
+        letter-spacing: 3.6px;
+    }
+    .nav-menu a:after {
+        background: #000000;
+    }
+    .phone-box small {
+        color: var(--primary-foreground) !important;
+    }
+    .phone-box h6 {
+       color: var(--primary-foreground) !important;
+       font-weight: 600;
+    }
+    .btn-close{
+        outline:none;
+        box-shadow:none;
+
+    }
 
 }

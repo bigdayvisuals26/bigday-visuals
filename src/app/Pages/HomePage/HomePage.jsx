@@ -145,28 +145,22 @@ function HomePage() {
       </Link>
 
       <section className="HeroMainSection">
-        <Container fluid className="container-xl">
-          <div className="d">
-            <p>Pathankot · Punjab · Since 2026</p>
-            <div className="s">
-              <h2>
-                If it's your big day, <span className="pxl-title--highlight">Big day </span> 
-              </h2>
+          <div className="HeroMainData">
+            <p className="TextSpan">Pathankot · Punjab · Since 2026</p>
+            <div className="HeadingDiv">
+              <h2> If it&apos;s your </h2>
               <span>Big Day</span>
               <p>it deserves Bigday Visuals</p>
             </div>
 
-            <div className="ss">
+            <div className="HeroBtnDiv">
               <Button>WATCH OUR WORK</Button>
-              <Link href="https://www.instagram.com" target="_blank">
+              <Link href="https://wa.me/916280035719"target="_blank">
                 WHATSAPP US
               </Link>
             </div>
 
-
-
           </div>
-        </Container>
       </section>
 
       <section className="HeroSection">
@@ -386,40 +380,14 @@ function HomePage() {
         <Container fluid className="container-xl">
           <div className="ContactData">
 
-            <div className="ContactTopDiv">
-
-              <div className="g">
-                <span><FaPhoneAlt /></span>
-                <div className="w">
-                  <div className="w">
-                    <h3>Book Us</h3>
-                    <p>+91-855437816</p>
-                  </div>
-                  <Link href="#">Call Now</Link>
-                </div>
-              </div>
-              <div className="g">
-                <span><FaLocationDot /></span>
-                <div className="w">
-                  <div className="w">
-                    <h3>Studio Address</h3>
-                    <p>13 Madison Street, NY, USA</p>
-                  </div>
-                  <Link href="#">View Map</Link>
-                </div>
-              </div>
-              
-
-            </div>
-
-
-
+          
             <div className="ContactBottomDiv">
 
               <div className="TpCL">
                 <span className="section-subtitle">Contact Us</span>
                 <h2> Feel Free To <br /> Ask Anything <br />  <span className="pxl-title--highlight"> Contact Us </span></h2>
               </div>
+
               <div className="TpCR">
 
                 <Form>

@@ -1,8 +1,9 @@
 :root {
 
-
   --primary-font: var(--font-jost), sans-serif;
-  --secondary-font: var(--font-cormorant-garamond), sans-serif;
+  --secondary-font: var(--font-cormorant-garamond), serif;
+  --script-font: var(--font-great-vibes), cursive;
+
   --primary-color: #151515;
   --secondary-color: #57e2d0;
   --third-color: #585858;
@@ -74,13 +75,14 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: var(--secondary-font);
 }
 
 body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   color: var(--foreground);
   background: var(--background) !important;
   -webkit-font-smoothing: antialiased;
@@ -96,14 +98,11 @@ body {
 a {
   color: inherit;
   text-decoration: none !important;
-  font-family: var(--primary-font) !important;
 }
 h1,h2,h3,h4,h5,h6{
-  font-family: var(--secondary-font) !important;
   margin: 0 !important;
 }
 input{
-  font-family: var(--primary-font) !important;
   box-shadow: none !important;
 }
 input:focus{
@@ -113,7 +112,6 @@ textarea:focus{
   border-color: #5e6a8a !important;
 }
 p{
-  font-family: var(--primary-font) !important;
   margin: 0 !important  ;
 }
 ul{

@@ -20,6 +20,7 @@ import {
 
 import "./Header.css";
 import Link from "next/link";
+import Image from "next/image";
 
 function Header() {
 
@@ -38,17 +39,13 @@ function Header() {
       {/* TOP BAR */}
 
       <div className="topbar">
-
         <Container fluid className="container-xl">
-
           <div className="topbar-inner">
-
             <div className="social-icons">
               <Link target="_blank" href="https://www.facebook.com/share/19kad4iZny/"><FaFacebookF /></Link>
               <Link target="_blank" href="https://www.instagram.com/bigdayvisuals?dlrf=aGlyNng3Zjlpam56"><FaInstagram /></Link>
               <Link target="_blank" href="https://wa.me/919914994135"><FaWhatsapp /></Link>
             </div>
-
             <div className="marquee">
 
               <div className="marquee-content">
@@ -60,23 +57,18 @@ function Header() {
               </div>
 
             </div>
-
             <div className="top-contact">
-
               <span>
-                <FaEnvelope /> bigdayvisuals26@gmail.com
+                <Link target="_blank" href="mailto:bigdayvisuals26@gmail.com">
+                  <FaEnvelope /> bigdayvisuals26@gmail.com
+                </Link>
               </span>
-
               <span>
                 <FaMapMarkerAlt /> Pathankot, Punjab, India
               </span>
-
             </div>
-
           </div>
-
         </Container>
-
       </div>
 
       {/* HEADER */}
@@ -89,10 +81,7 @@ function Header() {
         <Container fluid className="container-xl">
 
           <Navbar.Brand href="#" className="NavLogoDiv">
-            <div className="logo-mark">JF</div>
-            <div className="LogTexted">
-                <h6>Jakria<span>Furniture</span></h6>
-            </div>
+            <Link href="/"><Image src="/Images/logo.png" alt="BigDayVisuals" width={95} height={73} priority /></Link>
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -100,46 +89,32 @@ function Header() {
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             placement="end"
+            className="offcanvas-menu"
           >
 
             <Offcanvas.Header closeButton>
               <Offcanvas.Title>
-                Furniture
+                BigDayVisuals
               </Offcanvas.Title>
             </Offcanvas.Header>
 
             <Offcanvas.Body>
-
               <Nav className="mx-auto nav-menu">
-
                 <Nav.Link href="/">Home</Nav.Link>
-
                 <Nav.Link href="/#About">About</Nav.Link>
-
                 <Nav.Link href="/#Services">Services</Nav.Link>
-
                 <Nav.Link href="/#Team">Teams</Nav.Link>
-
                 <Nav.Link target="_blank" href="/contact-us">Contact</Nav.Link>
-
               </Nav>
-
               <div className="phone-box">
-
                 <div className="phone-icon">
                   <FaPhoneAlt />
                 </div>
-
                 <div>
-
                   <small>Need Help?</small>
-
                   <h6>+91 6280035719</h6>
-
                 </div>
-
               </div>
-
             </Offcanvas.Body>
 
           </Navbar.Offcanvas>

@@ -1,18 +1,24 @@
-import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Cormorant_Garamond, Jost } from 'next/font/google';
+import "./globals.css";
+import { Cormorant_Garamond, Great_Vibes, Jost } from "next/font/google";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footers/Footer";
 import "glightbox/dist/css/glightbox.min.css";
 
-const cormorantGaramond = Cormorant_Garamond({
-  subsets: ['latin'],
-  variable: '--font-cormorant-garamond',
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost",
 });
 
-const jost = Jost({
-  subsets: ['latin'],
-  variable: '--font-jost',
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant-garamond",
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-great-vibes",
 });
 
 export const metadata = {
@@ -38,8 +44,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${cormorantGaramond.variable} ${jost.variable}`}>
+    <html
+      lang="en"
+      className={`${cormorantGaramond.variable} ${jost.variable} ${greatVibes.variable}`}
+    >
+      <body>
         <Header/>
         {children}
         <Footer/>
