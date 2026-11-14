@@ -299,109 +299,6 @@
 
 
 
-/* ContactSection Started  */
-
-.ContactSection {
-    padding: 100px 0px;
-    position: relative;
-    min-height: 100vh;
-    /* &:before{
-        content: "";
-        position: absolute;
-        top: inherit;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 496px;
-        background: url(/Images/Lines.webp) no-repeat;
-
-    } */
-}
-.ContactSection .ContactData{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-
-.ContactSection .ContactData .ContactBottomDiv{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-}
-.ContactSection .ContactData .ContactBottomDiv .TpCL{
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    gap: 50px;
-}
-.ContactSection .ContactData .ContactBottomDiv .TpCL h2{
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1.26666em;
-    letter-spacing: -1.92px;
-    position: relative;
-    color: var(--fourth-color);
-}
-.ContactSection .ContactData .ContactBottomDiv .TpCR form{
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-.ContactSection .ContactData .ContactBottomDiv .TpCR form .FormControled.Two{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 65px;
-}
-.ContactSection .ContactData .ContactBottomDiv .TpCR form .FormControled :is(input , textarea) {
-    background: transparent;
-    outline: none;
-    border-color: #3A4051 !important;
-    min-height: 57px;
-    background-color: #4950603B;
-    border-radius: 200px 200px 200px 200px;
-    font-size: 18px;
-    font-weight: 400;
-    color: #9D9D9D;
-    padding: 10px 170px 10px 30px;
-}
-.ContactSection .ContactData .ContactBottomDiv .TpCR form .FormControled :is(input , textarea)::placeholder{
-    font-size: 16px;
-    font-weight: 600;
-    color: #7a7a7a;
-}
-
-.ContactSection .ContactData .ContactBottomDiv .TpCR form .FormControled textarea{
-    border-radius: 20px;
-}
-.ContactSection .ContactData .ContactBottomDiv .TpCR form .select-wrapper{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background: transparent;
-    outline: none;
-    border-color: #3A4051 !important;
-    min-height: 57px;
-    background-color: #4950603B;
-    border-radius: 200px 200px 200px 200px;
-    font-size: 18px;
-    font-weight: 400;
-    color: #9D9D9D;
-    padding: 10px 30px 10px 30px;
-}
-.ContactSection .ContactData .ContactBottomDiv .TpCR form .select-wrapper select.custom-select{
-    background: transparent !important;
-    font-size: 18px;
-    font-weight: 400;
-    color: #9D9D9D;
-    border: none !important;
-    outline: none;
-    width: 100%;
-}
-
-
-
-/* ContactSection Ended */
-
 
 
 /* ExploreKeySec started  */
@@ -538,7 +435,7 @@
 
 .GallerySec {
   padding: 100px 0;
-  background: #343333 url(/Images/body-bg.webp) !important;
+  background: var(--gradient-gold);
   min-height: 100vh;
 }
 .GallerySec .GalleryData {
@@ -638,12 +535,106 @@
 }
 /* Gallery Ended */
 
+/* IntroductionSection Started  */
 
+.IntroductionSection{
+    padding: 100px 0px;
+    position: relative;
+}
+.IntroductionSection .IntroductionData{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.IntroductionSection .IntroductionData h6{
+    font-size: 55px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.IntroductionSection .IntroductionData h6 span{
+    background: var(--gradient-gold);
+    color: #0000;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.IntroductionSection .IntroductionData .TopIntroDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+.IntroductionSection .IntroductionData .TopIntroDiv .leftintro h3{
+    font-size: 60px;
+    color: var(--text-primary);
+    text-transform: capitalize;
+}
+.IntroductionSection .IntroductionData .TopIntroDiv .rightintro p{
+    font-size: 20px;
+    color: var(--text-primary);
+    text-transform: capitalize;
+}
+.IntroductionSection .IntroductionData .BottomIntroDiv{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+.IntroductionSection .IntroductionData .BottomIntroDiv .IntroProcess{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.IntroductionSection .IntroductionData .BottomIntroDiv .IntroProcess .IntroSpan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-gold);
+    color: var(--primary-foreground);
+    font-size: 38px;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translate(-50% , 0%);
+        right: -350%;
+        width: 200%;
+        height: 1px;
+        background: var(--gold-soft);
+    }
+}
+.IntroductionSection .IntroductionData .BottomIntroDiv .IntroProcess:last-child .IntroSpan::before{
+    width: 0%;
+}
+.IntroductionSection .IntroductionData .BottomIntroDiv .IntroProcess .IntroTexed{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.IntroductionSection .IntroductionData .BottomIntroDiv .IntroProcess .IntroTexed h3{
+    color: var(--secondary-foreground);
+    font-size: 38px;
+    font-weight: 600;
+}
+.IntroductionSection .IntroductionData .BottomIntroDiv .IntroProcess .IntroTexed p{
+    color: var(--secondary-foreground);
+    font-size: 18px;
+    font-family: var(--primary-font);
+    font-weight: 400;
+}
+
+/* IntroductionSection Ended */
 
 /* NextGenSection Started  */
 
 .NextGenSection{
-    background: url(/Images/counter-bg-h2.jpg);
+    background: url(/Images/download.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -779,3 +770,240 @@
 }
 
 /* NextGenSection Ended */
+
+
+
+
+/* ContactSection Started  */
+
+.ContactSection {
+    padding: 100px 0px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    &:before{
+        content: "";
+        position: absolute;
+        top: inherit;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 496px;
+        background: url(/Images/Lines.webp) no-repeat;
+        z-index: -1;
+    }
+}
+.ContactSection .ContactData{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.ContactSection .ContactData .LeftContDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.ContactSection .ContactData .LeftContDiv h2{
+    font-size: 60px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+    position: relative;
+}
+.ContactSection .ContactData .LeftContDiv h2 span{
+    font-style: italic;
+    background: var(--gradient-gold);
+    color: #0000;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.ContactSection .ContactData .LeftContDiv .ContSocialDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ContactSection .ContactData .LeftContDiv .ContSocialDiv .SocialItems{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ContactSection .ContactData .LeftContDiv .ContSocialDiv .SocialItems .socl{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.ContactSection .ContactData .LeftContDiv .ContSocialDiv .SocialItems .socl a:first-child{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-family: var(--primary-font);
+    color: var(--secondary-foreground);
+    &:hover{
+        color: var(--gold);
+    }
+}
+.ContactSection .ContactData .LeftContDiv .ContSocialDiv .SocialItems .socl a:last-child{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: var(--primary-font);
+    color: var(--whatsapp);
+}
+.ContactSection .ContactData .LeftContDiv .ContSocialDiv .MailDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.ContactSection .ContactData .LeftContDiv .ContSocialDiv .MailDiv a{
+    color: var(--muted-foreground);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-weight: 400;
+    &:hover{
+        color: var(--gold);
+    }
+}
+.ContactSection .ContactData .LeftContDiv .ContSocialDiv .MailDiv h6{
+    color: var(--muted-foreground);
+    font-family: var(--primary-font);
+    font-size: 18px;
+    font-weight: 400;
+}
+.ContactSection .ContactData .LeftContDiv .scllink{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.ContactSection .ContactData .LeftContDiv .scllink a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    transition: color 0.3s ease-in-out , border 0.3s ease-in-out;
+    &:hover{
+        border: 1px solid var(--gold);
+    }
+    &:hover svg{
+        color: var(--gold);
+    }
+}
+.ContactSection .ContactData .LeftContDiv .scllink a svg{
+    color: var(--secondary-foreground);
+}
+.ContactSection .ContactData .RightContDiv{
+    background: lab(4 0.68 1.82 / 0.74);
+    border: 1px solid var(--border);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.ContactSection .ContactData .RightContDiv p{
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: var(--primary-font);
+    letter-spacing: 3.6px;
+}
+.ContactSection .ContactData .RightContDiv  form{
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+}
+.ContactSection .ContactData .RightContDiv  form :is( .InptCntrl , .SlectCntrl) {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.ContactSection .ContactData .RightContDiv  form :is( .InptCntrl , .SlectCntrl) label{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    letter-spacing: 1.6px;
+    color: var(--muted-foreground);
+}
+.ContactSection .ContactData .RightContDiv  form .InptCntrl input {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    letter-spacing: 1.6px;
+    color: var(--secondary-foreground);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+}
+.ContactSection .ContactData .RightContDiv  form .InptCntrl input::placeholder{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    letter-spacing: 1.6px;
+    color: var(--muted-foreground);
+}
+.ContactSection .ContactData .RightContDiv  form .InptCntrl input:focus{
+    border-bottom: 1px solid var(--gold) !important;
+}
+
+.ContactSection .ContactData .RightContDiv  form .SlectCntrl .slcd{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    letter-spacing: 1.6px;
+    color: var(--secondary-foreground);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+}
+.ContactSection .ContactData .RightContDiv form .SlectCntrl .slcd option {
+  color: var(--primary-foreground);
+  background: var(--gradient-gold) !important;
+}
+
+.ContactSection .ContactData .RightContDiv  form .InptCntrl .InptTextArea{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    letter-spacing: 1.6px;
+    color: var(--secondary-foreground);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+}
+.ContactSection .ContactData .RightContDiv  form .InptCntrl .InptTextArea::placeholder{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    letter-spacing: 1.6px;
+    color: var(--muted-foreground);
+}
+.ContactSection .ContactData .RightContDiv  form .InptCntrl .InptTextArea:focus{
+    border-bottom: 1px solid var(--gold) !important;
+}
+.ContactSection .ContactData .RightContDiv  form .SubmitBTN{
+    width: 100%;
+    background: var(--gradient-gold);
+    min-height: 52px;
+    box-shadow: var(--shadow-gold);
+    text-transform: uppercase;
+    color: var(--primary-foreground);
+    letter-spacing: 4.2px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--primary-font);
+}
+
+/* ContactSection Ended */

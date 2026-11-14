@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import './HomePage.css'
-import { Button, Container, Form } from 'react-bootstrap'
+import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import Skiper49 from '@/app/Components/HeroCarousel/HeroCarousel'
 import Link from 'next/link'
 import { TfiCamera } from 'react-icons/tfi'
@@ -10,12 +10,13 @@ import { PiBookOpenUserFill } from 'react-icons/pi'
 import { BsCameraReelsFill } from 'react-icons/bs'
 import { TbCameraHeart } from 'react-icons/tb'
 import { RiCameraLensAiLine } from 'react-icons/ri'
-import { FaAngleDoubleDown, FaArrowRight, FaPhoneAlt, FaPlay, FaStaylinked } from 'react-icons/fa'
+import { FaAngleDoubleDown, FaArrowRight, FaFacebook, FaInstagram, FaPhoneAlt, FaPlay, FaStaylinked, FaYoutube } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
 import AboutUs from "../About-Us/AboutUs";
 import Image from "next/image";
 import "glightbox/dist/css/glightbox.min.css";
 import CountUp from "react-countup";
+import { BiMessageRounded } from "react-icons/bi";
 
 function HomePage() {
   const [selectedValue, setSelectedValue] = useState("");
@@ -86,40 +87,127 @@ function HomePage() {
   const galleryData = [
   {
     id: 1,
-    title: "Luxury Sofa",
-    category: "living",
-    image: "/Images/gallery1.avif",
+    title: "Wedding",
+    category: "wedding",
+    image: "/Images/Gallery/1.avif",
   },
   {
     id: 2,
-    title: "Wooden Dining Table",
-    category: "dining",
-    image: "/Images/gallery2.avif",
+    title: "Wedding",
+    category: "wedding",
+    image: "/Images/Gallery/2.avif",
   },
   {
     id: 3,
-    title: "Modern Bed",
-    category: "bedroom",
-    image: "/Images/gallery3.avif",
+    title: "Wedding",
+    category: "wedding",
+    image: "/Images/Gallery/3.avif",
   },
   {
     id: 4,
-    title: "Office Desk",
-    category: "office",
-    image: "/Images/gallery4.avif",
+    title: "Wedding",
+    category: "wedding",
+    image: "/Images/Gallery/4.avif",
   },
   {
     id: 5,
-    title: "Luxury Chair",
-    category: "living",
-    image: "/Images/gallery5.avif",
+    title: "Pre-Wedding",
+    category: "prewedding",
+    image: "/Images/Gallery/5.avif",
   },
   {
     id: 6,
-    title: "Outdoor Furniture",
-    category: "outdoor",
-    image: "/Images/gallery6.avif",
+    title: "Pre-Wedding",
+    category: "prewedding",
+    image: "/Images/Gallery/6.avif",
   },
+  {
+    id: 7,
+    title: "Pre-Wedding",
+    category: "prewedding",
+    image: "/Images/Gallery/7.avif",
+  },
+  {
+    id: 8,
+    title: "Pre-Wedding",
+    category: "prewedding",
+    image: "/Images/Gallery/8.avif",
+  },
+  {
+    id: 9,
+    title: "Birthday & Events",
+    category: "birthday",
+    image: "/Images/Gallery/9.avif",
+  },
+  {
+    id: 10,
+    title: "Birthday & Events",
+    category: "birthday",
+    image: "/Images/Gallery/10.avif",
+  },
+  {
+    id: 11,
+    title: "Birthday & Events",
+    category: "birthday",
+    image: "/Images/Gallery/11.avif",
+  },
+  {
+    id: 12,
+    title: "Birthday & Events",
+    category: "birthday",
+    image: "/Images/Gallery/12.avif",
+  },
+  {
+    id: 13,
+    title: "Birthday & Events",
+    category: "maternity",
+    image: "/Images/Gallery/13.avif",
+  },
+  {
+    id: 14,
+    title: "Birthday & Events",
+    category: "maternity",
+    image: "/Images/Gallery/14.avif",
+  },
+  {
+    id: 15,
+    title: "Birthday & Events",
+    category: "maternity",
+    image: "/Images/Gallery/15.avif",
+  },
+  {
+    id: 16,
+    title: "Birthday & Events",
+    category: "portfolio",
+    image: "/Images/Gallery/16.avif",
+  },
+  {
+    id: 17,
+    title: "Birthday & Events",
+    category: "portfolio",
+    image: "/Images/Gallery/17.avif",
+  },
+  {
+    id: 18,
+    title: "Birthday & Events",
+    category: "portfolio",
+    image: "/Images/Gallery/18.avif",
+  },
+  {
+    id: 19,
+    title: "Birthday & Events",
+    category: "reels",
+    image: "/Images/Gallery/19.avif",
+  },
+  {
+    id: 20,
+    title: "Birthday & Events",
+    category: "reels",
+    image: "/Images/Gallery/20.avif",
+  },
+  
+
+
   ];
   const [activeCategory, setActiveCategory] = useState("all");
   const filteredGallery =
@@ -128,6 +216,52 @@ function HomePage() {
     : galleryData.filter((item) => item.category === activeCategory);
 
   // Gallery Data Ended 
+
+
+  // Booking Form Strted
+    const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    date: '',
+    eventType: '',
+    otherEvent: '',
+    message: '',
+  });
+
+  // Replace with your WhatsApp business number (include country code, no '+' or spaces)
+  const whatsappNumber = '919914994135';
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const selectedEvent =
+      formData.eventType === 'Other' ? formData.otherEvent : formData.eventType;
+
+    // Format the message for WhatsApp
+    const text = `*New Photography Booking Inquiry* 📸
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone/WhatsApp:* ${formData.phone}
+*Event Date:* ${formData.date}
+*Event Type:* ${selectedEvent}
+*Details:* ${formData.message}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me{whatsappNumber}?text=${encodedText}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+  }; 
+  // Booking Form Ended 
 
 
   return (
@@ -266,7 +400,52 @@ function HomePage() {
 
 
           </div>
+        </Container>
+      </section>
 
+      <section className="IntroductionSection">
+        <Container fluid className="container-xl">
+          <div className="IntroductionData">
+            <div className="TopIntroDiv">
+              <div className="leftintro">
+                <h3>We’re two brothers who turn your real moments into photographs and films you’ll want to relive.</h3>
+              </div>
+              <div className="rightintro">
+                <p>One of us brings 5 years of UI/UX and visual design experience. The other has 3 years of video editing experience, including work with Dr. Satinder Sartaj. Together, we capture weddings, celebrations, portraits and the little moments in between.</p>
+              </div>
+            </div>
+            <h6>Our <span>process</span></h6>
+            <div className="BottomIntroDiv">
+              <div className="IntroProcess">
+                <div className="IntroSpan">01</div>
+                <div className="IntroTexed">
+                  <h3>Discover</h3>
+                  <p>We get to know your occasion, style and the moments that matter most.</p>
+                </div>
+              </div>
+              <div className="IntroProcess">
+                <div className="IntroSpan">02</div>
+                <div className="IntroTexed">
+                  <h3>Plan</h3>
+                  <p>We discuss the schedule, locations and coverage so everything feels considered.</p>
+                </div>
+              </div>
+              <div className="IntroProcess">
+                <div className="IntroSpan">03</div>
+                <div className="IntroTexed">
+                  <h3>Capture</h3>
+                  <p>We photograph and film the candid moments, big emotions and joyful details.</p>
+                </div>
+              </div>
+              <div className="IntroProcess">
+                <div className="IntroSpan">04</div>
+                <div className="IntroTexed">
+                  <h3>Deliver</h3>
+                  <p>We carefully edit your photos and films, ready for you to revisit and share.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -290,26 +469,26 @@ function HomePage() {
                 All
               </button>
 
-              <button className={activeCategory === "Wedding" ? "active" : ""} onClick={() => setActiveCategory("Wedding")} >
+              <button className={activeCategory === "wedding" ? "active" : ""} onClick={() => setActiveCategory("wedding")} >
                 Wedding
               </button>
 
-              <button className={activeCategory === "Pre-Wedding" ? "active" : ""} onClick={() => setActiveCategory("Pre-Wedding")} >
+              <button className={activeCategory === "prewedding" ? "active" : ""} onClick={() => setActiveCategory("prewedding")} >
                 Pre-Wedding
               </button>
 
-              <button className={activeCategory === "Birthday & Events" ? "active" : ""} onClick={() => setActiveCategory("Birthday & Events")}>
+              <button className={activeCategory === "birthday" ? "active" : ""} onClick={() => setActiveCategory("birthday")}>
                 Birthday & Events
               </button>
 
-              <button className={activeCategory === "office" ? "active" : ""} onClick={() => setActiveCategory("office")}>
+              <button className={activeCategory === "maternity" ? "active" : ""} onClick={() => setActiveCategory("maternity")}>
                 Maternity & Baby
               </button>
 
-              <button className={activeCategory === "outdoor" ? "active" : ""} onClick={() => setActiveCategory("outdoor")} >
+              <button className={activeCategory === "portfolio" ? "active" : ""} onClick={() => setActiveCategory("portfolio")} >
                 Portfollio
               </button>
-              <button className={activeCategory === "outdoor" ? "active" : ""} onClick={() => setActiveCategory("outdoor")} >
+              <button className={activeCategory === "reels" ? "active" : ""} onClick={() => setActiveCategory("reels")} >
                 Reels & Editing
               </button>
 
@@ -380,64 +559,207 @@ function HomePage() {
         <Container fluid className="container-xl">
           <div className="ContactData">
 
-          
-            <div className="ContactBottomDiv">
-
-              <div className="TpCL">
-                <span className="section-subtitle">Contact Us</span>
-                <h2> Feel Free To <br /> Ask Anything <br />  <span className="pxl-title--highlight"> Contact Us </span></h2>
-              </div>
-
-              <div className="TpCR">
-
-                <Form>
-
-                  <div className="FormControled Two">
-                    <Form.Control type="name" placeholder="Enter First Name" />
-                    <Form.Control type="name" placeholder="Enter Last Name" />
+            <div className="LeftContDiv">
+              <span className="section-subtitle">Contact Us</span>
+              <h2> Let&apos;s make your <span>big </span> <br /> <span>day</span> unforgettable.</h2>
+              <div className="ContSocialDiv">
+                <div className="SocialItems">
+                  <div className="socl">
+                    <Link href="#"><FaPhoneAlt color="#d9a850" /> +91-9914994135</Link>
+                    <Link href="#"><BiMessageRounded /> WhatsApp Anil</Link>
                   </div>
+                  <div className="socl">
+                    <Link href=""><FaPhoneAlt color="#d9a850" /> +91-6280035719</Link>
+                    <Link href=""><BiMessageRounded /> WhatsApp Amit</Link>
+                  </div>
+                </div>
+                <div className="MailDiv">
+                  <Link href="mailto:bigdayvisuals26@gmail.com">bigdayvisuals26@gmail.com</Link>
+                  <h6>Pathankot, Punjab, India</h6>
+                </div>
 
-                  <div className="FormControled">
+              </div>
+              <div className="scllink">
+                <Link href=""><FaInstagram fontSize={20}/></Link>
+                <Link href=""><FaFacebook fontSize={20} /></Link>
+                <Link href=""><FaYoutube fontSize={20} /></Link>
+              </div>
+            </div>
+
+            <div className="RightContDiv">
+              <p>Booking enquiry</p>
+              {/* <Form>
+                <Row>
+                  <Col md={6}>
+                    <Form.Control type="name" placeholder="Enter First Name"  />
+                  </Col>
+                  <Col md={6}>
                     <Form.Control type="email" placeholder="Enter Email Adress" />
-                  </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={6}>
+                    <Form.Control type="number" placeholder="Phone / Whatsapp" />
+                  </Col>
+                  <Col md={6}>
+                    <Form.Control type="date" placeholder="mm/dd/yyyy" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={12}>
+                    <Form.Control as="textarea" rows={8} placeholder="Tell us about your big day…" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={12}>
+                    <Button>Send booking on WhatsApp</Button>
+                  </Col>
+                </Row>
+              </Form> */}
 
-                  <div className="select-wrapper">
-                    <select
-                      id="custom-select"
-                      className="custom-select"
-                      value={selectedValue}
-                      onChange={(e) => setSelectedValue(e.target.value)}
-                    >
-                      <option value="" disabled>
-                        Open this select menu
-                      </option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                    {/* <span className="select-arrow"><FaAngleDoubleDown /></span> */}
-                  </div>
+              <Form onSubmit={handleSubmit}>
+                <Row >
+                  <Col md={6}>
+                    <Form.Group controlId="formName" className="InptCntrl">
+                      <Form.Label>
+                        First Name <span className="text-danger">*</span>
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="name"
+                        placeholder="Enter First Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
 
-                  {selectedValue && (
-                    <p className="selected-text">
-                      Selected value: {selectedValue}
-                    </p>
+                  <Col md={6}>
+                    <Form.Group controlId="formEmail" className="InptCntrl">
+                      <Form.Label>
+                        Email Address <span className="text-danger">*</span>
+                      </Form.Label>
+                      <Form.Control
+                        type="email"
+                        name="email"
+                        placeholder="Enter Email Address"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row >
+                  <Col md={6}>
+                    <Form.Group controlId="formPhone" className="InptCntrl">
+                      <Form.Label>
+                        Phone / WhatsApp <span className="text-danger">*</span>
+                      </Form.Label>
+                      <Form.Control
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone / WhatsApp"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+
+                  <Col md={6}>
+                    <Form.Group controlId="formDate" className="InptCntrl">
+                      <Form.Label>
+                        Event Date <span className="text-danger">*</span>
+                      </Form.Label>
+                      <Form.Control
+                        type="date"
+                        name="date"
+                        value={formData.date}
+                        onChange={handleChange}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                {/* Custom Event Type Select */}
+                <Row >
+                  <Col md={formData.eventType === 'Other' ? 6 : 12}>
+                    <Form.Group controlId="formEventType" className="SlectCntrl">
+                      <Form.Label>
+                        Select Event Type <span className="text-danger">*</span>
+                      </Form.Label>
+                      <Form.Select
+                        name="eventType"
+                        className="slcd"
+                        value={formData.eventType}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="">-- Choose an Event --</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Pre-Wedding">Pre-Wedding</option>
+                        <option value="Birthday">Birthday</option>
+                        <option value="Maternity Shoot">Maternity Shoot</option>
+                        <option value="Other">Other</option>
+                      </Form.Select>
+                    </Form.Group>
+                  </Col>
+
+                  {/* Conditional Input if "Other" is selected */}
+                  {formData.eventType === 'Other' && (
+                    <Col md={6}>
+                      <Form.Group controlId="formOtherEvent" className="InptCntrl">
+                        <Form.Label>
+                          Specify Event <span className="text-danger">*</span>
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
+                          name="otherEvent"
+                          placeholder="Enter your event type"
+                          value={formData.otherEvent}
+                          onChange={handleChange}
+                          required
+                        />
+                      </Form.Group>
+                    </Col>
                   )}
+                </Row>
 
-                  <div className="FormControled">
-                    <Form.Control as="textarea" rows={8} placeholder="Message" />
-                  </div>
+                <Row >
+                  <Col md={12}>
+                    <Form.Group controlId="formMessage" className="InptCntrl">
+                      <Form.Label>
+                        Event Details <span className="text-danger">*</span>
+                      </Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        name="message"
+                        className="InptTextArea"
+                        rows={5}
+                        placeholder="Tell us about your big day…"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
 
-                  <div className="s">
-                    <Button>SUBMIT NOW</Button>
-                  </div>
-
-                </Form>
-
-              </div>
-
+                <Row>
+                  <Col md={12}>
+                    <Button variant="success" type="submit" className="SubmitBTN">
+                      Send booking on WhatsApp
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
 
             </div>
+
 
 
           </div>

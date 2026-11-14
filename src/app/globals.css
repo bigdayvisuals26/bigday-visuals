@@ -52,7 +52,7 @@
     --border: oklch(76% .12 80 / .18);
     --input: oklch(76% .12 80 / .25);
     --ring: oklch(76% .12 80);
-    --gold: oklch(76% .12 80);
+    --gold: #d9a850;
     --gold-soft: oklch(87% .09 88);
     --ivory: oklch(97% .012 85);
     --whatsapp: oklch(70% .17 150);
@@ -126,23 +126,16 @@ ul{
 span.section-subtitle{
   width: fit-content;
   text-align: center;
-  color: var(--secondary-color);
+  font-family: var(--primary-font);
+  color: var(--primary-foreground);
   border-radius: 99px;
-  background-color: rgba(255, 255, 255, .1);
+  background: var(--gradient-gold);
   padding: 6px 30px 6px 30px;
+  font-weight: 500;
+  letter-spacing: 3.1px;
 }
-span.pxl-title--highlight{
-  font-family: inherit;
-  font-style: normal;
-  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--gradient-color-from) 50%, var(--gradient-color-to) 100%);
-  animation: gradient-animation 6s infinite ease-in-out;
-  background-size: 300% 300%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  letter-spacing: -1.92px;
-  font-weight: 700;
-  -webkit-text-fill-color: transparent;
-}
+
+
 
 @keyframes pxl_grid_fall {
   0% {
@@ -153,19 +146,7 @@ span.pxl-title--highlight{
     top: 100%
   }
 }
-@keyframes gradient-animation {
-  0% {
-    background-position: 0
-  }
 
-  50% {
-    background-position: 100%
-  }
-
-  100% {
-    background-position: 0
-  }
-}
 
 
 
