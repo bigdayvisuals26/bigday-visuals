@@ -17,6 +17,7 @@ import Image from "next/image";
 import "glightbox/dist/css/glightbox.min.css";
 import CountUp from "react-countup";
 import { BiMessageRounded } from "react-icons/bi";
+import VideoShowcase from "@/app/Components/VideoShowcase/VideoShowcase";
 
 function HomePage() {
   const [selectedValue, setSelectedValue] = useState("");
@@ -26,51 +27,51 @@ function HomePage() {
       id: 1,
       icon: <TfiCamera fontSize={52} />,
       title: "Wedding Photography",
-      description: " The talent at kimono runs wide range of services. Across many market geographies & typologies.",
+      description: "The big moments, quiet glances and family memories—beautifully captured throughout your celebration.",
       link: "#",
     },
     {
       id: 2,
       icon: <GiDeliveryDrone fontSize={52}/>,
-      title: "Drone Cinematography ",
-      description: " The talent at kimono runs wide range of services. Across many market geographies & typologies.",
+      title: "Drone & Wedding Cinematography ",
+      description: "Relive the emotion, music and energy of your wedding through a cinematic film made around your story.",
       link: "#",
     },
     {
       id: 3,
       icon: <BsCameraReelsFill fontSize={52} />,
-      title: "Wedding Cinematography ",
-      description: " The talent at kimono runs wide range of services. Across many market geographies & typologies.",
+      title: "Pre-Wedding & Couple Shoots ",
+      description: "Relax, be yourselves and create photographs and films that feel personal to the two of you.",
       link: "#",
     },
     {
       id: 4,
       icon: <PiBookOpenUserFill fontSize={52} />,
-      title: "Personal Portfolio Shoot ",
-      description: " The talent at kimono runs wide range of services. Across many market geographies & typologies.",
+      title: "Birthday & Celebrations",
+      description: "From the cake cutting to the dance floor, we capture the fun, people and little details of your day.",
       link: "#",
     },
     {
       id: 5,
       icon: <RiCameraLensAiLine fontSize={52} />,
-      title: "Wildlife Photography ",
-      description: " The talent at kimono runs wide range of services. Across many market geographies & typologies.",
+      title: "Events & Functions",
+      description: "Coverage for family gatherings, special occasions and events, with photos and video tailored to your needs.",
       link: "#",
     },
     {
       id: 6,
       icon: <TbCameraHeart fontSize={52} />,
-      title: "Studio Photography ",
-      description: " The talent at kimono runs wide range of services. Across many market geographies & typologies.",
+      title: "Personal Portraits ",
+      description: "A relaxed portrait session designed to show your personality, style and story.",
       link: "#",
     },
   ];
 
   const generationStats = [
-    { id: 1, value: 10, suffix: "k+", label: "Products Sold" },
-    { id: 2, value: 35, suffix: "", label: "Years Service" },
-    { id: 3, value: 450, suffix: "", label: "Outlets Worldwide" },
-    { id: 4, value: 1000, suffix: "+", label: "Satisfied Customers" },
+    { id: 1, value: 5, suffix: "y+", label: "Years in UI/UX Design" },
+    { id: 2, value: 3, suffix: "y+", label: "Years in Video Editing" },
+    { id: 3, value: 2, suffix: "", label: "Brothers Behind the Camera" },
+    { id: 4, value: 2, suffix: "", label: "Shared Love for Storytelling" },
   ];
   const [statsRefreshKey, setStatsRefreshKey] = useState(0);
 
@@ -286,62 +287,13 @@ function HomePage() {
               <span>Big Day</span>
               <p>it deserves Bigday Visuals</p>
             </div>
-
             <div className="HeroBtnDiv">
               <Button>WATCH OUR WORK</Button>
               <Link href="https://wa.me/916280035719"target="_blank">
                 WHATSAPP US
               </Link>
             </div>
-
           </div>
-      </section>
-
-      <section className="HeroSection">
-          <Container fluid className="container-xl">
-              <div className="HeroTexedDiv">
-                <span className="section-subtitle">Photography Agency</span>
-                <div className="HeroHeading">
-                  <h1> We Capture Your Best  <span className="pxl-title--highlight"> Memories </span>  Here </h1>
-                  <p>kimono photography Agency runs wide and deep. Across many markets, geographies typologies, our team members</p>
-                </div>
-              </div>
-        </Container>
-        <Skiper49/>
-
-
-          <Container fluid className="container-xl">
-              <div className="HeroContentDiv">
-                <div className="ContentHeading">
-                  <span className="section-subtitle">Photography</span>
-                  <div className="HeroHeading">
-                    <h2> Explore Kimono <br /> Photography  <span className="pxl-title--highlight"> Services </span> </h2>
-                    <p>kimono photography Agency runs wide and deep. Across many markets, geographies typologies, our team members</p>
-                  </div>
-                </div>           
-                <div className="HeroContentData">
-                  {heroItems.map((item) => (
-                    <div className="HerocontItems" key={item.id}>
-                      <span>{item.icon}</span>
-
-                      <div className="htitle">
-                        <Link href={item.link}>{item.title}</Link>
-                        <p>{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>           
-              </div>
-
-          </Container>
-
-        {/* <div class="pxl-divider-vertical">
-          <div class="pxl-section-line1"></div>
-          <div class="pxl-section-line2"></div>
-          <div class="pxl-section-line3"></div>
-          <div class="pxl-section-line4"></div>
-        </div> */}
-
       </section>
 
       <section className="ExploreKeySec">
@@ -379,31 +331,44 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="WhatWeDoSection">
-        <Container fluid className="container-xl">
-          <div className="WhatWeDoData">
-            <div className="whatWeDoHeading">
-              <h2>What we <em className="text-gold-gradient">do</em></h2>
-            </div>
-            <div className="whatWeDoContent">
-              <ul>
-                <li><span>01</span> <Link href="#">Wedding Films</Link> <p>Full-day cinematic coverage, highlight films and traditional albums.</p> </li>
-                <li><span>02</span> <Link href="#">Pre-Wedding</Link> <p>Story-driven shoots across Punjab&apos;s most beautiful locations.</p> </li>
-                <li><span>03</span> <Link href="#">Birthday & Events</Link> <p>Candid coverage of birthdays, anniversaries and family functions.</p> </li>
-                <li><span>04</span> <Link href="#">Maternity & Baby</Link> <p>Soft, timeless portraits of life&apos;s newest chapters.</p> </li>
-                <li><span>05</span> <Link href="#">Reels & Editing</Link> <p>Scroll-stopping reels and pro editing for creators and brands.</p> </li>
-                <li><span>06</span> <Link href="#">Albums & Design</Link> <p>Premium album layouts, invites and graphics by our designer.</p> </li>
-                
-              </ul>
-            </div>
+       <Skiper49/>
 
+       <VideoShowcase/>
 
+       <section className="OurServicesSec">
+          <Container fluid className="container-xl">
+              <div className="HeroContentDiv">
 
-          </div>
-        </Container>
-      </section>
+                <div className="ContentHeading">
+                  <span className="section-subtitle">Our Services</span>
+                  <div className="HeroHeading">
+                    <h2> Photography & Films <br /> For Every Kind of <span> Celebration </span> </h2>
+                    <p>We’re two brothers capturing the moments that matter—from wedding-day emotions to birthdays, events and portraits. Choose a service, and let’s create something you’ll love looking back on.</p>
+                  </div>
+                </div>     
 
-      <section className="IntroductionSection">
+                <div className="HeroContentData">
+                  {heroItems.map((item) => (
+                    <div className="HerocontItems" key={item.id}>
+                      <span>{item.icon}</span>
+                      <div className="htitle">
+                        <Link href={item.link}>{item.title}</Link>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>  
+
+                <div className="ServiceBtn">
+                  <ComnBtn text="Explore Our Work " href="#" />
+                </div>
+
+              </div>
+
+          </Container>
+       </section>
+
+        <section className="IntroductionSection">
         <Container fluid className="container-xl">
           <div className="IntroductionData">
             <div className="TopIntroDiv">
@@ -447,7 +412,34 @@ function HomePage() {
             </div>
           </div>
         </Container>
-      </section>
+        </section>
+      
+
+        <section className="WhatWeDoSection">
+          <Container fluid className="container-xl">
+            <div className="WhatWeDoData">
+              <div className="whatWeDoHeading">
+                <h2>What we <em className="text-gold-gradient">do</em></h2>
+              </div>
+              <div className="whatWeDoContent">
+                <ul>
+                  <li><span>01</span> <Link href="#">Wedding Films</Link> <p>Full-day cinematic coverage, highlight films and traditional albums.</p> </li>
+                  <li><span>02</span> <Link href="#">Pre-Wedding</Link> <p>Story-driven shoots across Punjab&apos;s most beautiful locations.</p> </li>
+                  <li><span>03</span> <Link href="#">Birthday & Events</Link> <p>Candid coverage of birthdays, anniversaries and family functions.</p> </li>
+                  <li><span>04</span> <Link href="#">Maternity & Baby</Link> <p>Soft, timeless portraits of life&apos;s newest chapters.</p> </li>
+                  <li><span>05</span> <Link href="#">Reels & Editing</Link> <p>Scroll-stopping reels and pro editing for creators and brands.</p> </li>
+                  <li><span>06</span> <Link href="#">Albums & Design</Link> <p>Premium album layouts, invites and graphics by our designer.</p> </li>
+                  
+                </ul>
+              </div>
+
+
+
+            </div>
+          </Container>
+        </section>
+
+      
 
       <AboutUs/>
 
@@ -519,14 +511,9 @@ function HomePage() {
             <div>
               <VideoButton />
             </div>
-            <h2>Next-Generation Design</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <ComnBtn text="View all products" href="#" />
+            <h2>Your Moments. Your Story. Our Lens.</h2>
+            <p>We’re two brothers capturing weddings, celebrations, portraits and all the little moments in between. From the first frame to the final film, we create visuals that bring you back to how it felt. </p>
+            <ComnBtn text="Explore Our Work " href="#" />
           </div>
         </Container>
         <div className="GenrationCount" key={statsRefreshKey}>
@@ -550,15 +537,9 @@ function HomePage() {
       </section>
       
      
-
-
-
-
-
       <section className="ContactSection">
         <Container fluid className="container-xl">
           <div className="ContactData">
-
             <div className="LeftContDiv">
               <span className="section-subtitle">Contact Us</span>
               <h2> Let&apos;s make your <span>big </span> <br /> <span>day</span> unforgettable.</h2>
@@ -585,37 +566,8 @@ function HomePage() {
                 <Link href=""><FaYoutube fontSize={20} /></Link>
               </div>
             </div>
-
             <div className="RightContDiv">
               <p>Booking enquiry</p>
-              {/* <Form>
-                <Row>
-                  <Col md={6}>
-                    <Form.Control type="name" placeholder="Enter First Name"  />
-                  </Col>
-                  <Col md={6}>
-                    <Form.Control type="email" placeholder="Enter Email Adress" />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={6}>
-                    <Form.Control type="number" placeholder="Phone / Whatsapp" />
-                  </Col>
-                  <Col md={6}>
-                    <Form.Control type="date" placeholder="mm/dd/yyyy" />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={12}>
-                    <Form.Control as="textarea" rows={8} placeholder="Tell us about your big day…" />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={12}>
-                    <Button>Send booking on WhatsApp</Button>
-                  </Col>
-                </Row>
-              </Form> */}
 
               <Form onSubmit={handleSubmit}>
                 <Row >
@@ -685,7 +637,6 @@ function HomePage() {
                   </Col>
                 </Row>
 
-                {/* Custom Event Type Select */}
                 <Row >
                   <Col md={formData.eventType === 'Other' ? 6 : 12}>
                     <Form.Group controlId="formEventType" className="SlectCntrl">
@@ -759,9 +710,6 @@ function HomePage() {
               </Form>
 
             </div>
-
-
-
           </div>
         </Container>
       </section>
@@ -807,7 +755,7 @@ export function VideoButton() {
       if (lightbox) lightbox.destroy();
     };
   }, []);
-  const text = " PLAY VIDEO • PLAY VIDEO • ";
+  const text = " PLAY OUR FILM • PLAY OUR FILM • ";
   return (
     <a
       href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -826,7 +774,7 @@ export function VideoButton() {
         </text>
       </svg>
       <div className="playIcon">
-        <FaPlay />
+        <FaPlay color="#080706" />
       </div>
     </a>
   );

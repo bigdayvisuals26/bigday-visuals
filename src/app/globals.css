@@ -40,7 +40,7 @@
     --popover: oklch(17% .008 70);
     --popover-foreground: oklch(95% .015 85);
     --primary: oklch(76% .12 80);
-    --primary-foreground: oklch(13% .005 70);
+    --primary-foreground: #080706;
     --secondary: oklch(21% .01 70);
     --secondary-foreground: oklch(95% .015 85);
     --muted: oklch(21% .01 70);
@@ -57,6 +57,7 @@
     --ivory: oklch(97% .012 85);
     --whatsapp: oklch(70% .17 150);
     --gradient-gold: linear-gradient(120deg, oklch(62% .11 70), oklch(87% .09 88) 45%, oklch(70% .12 75));
+    --gradient-gold-hover: linear-gradient(120deg, oklch(70% .12 75), oklch(87% .09 88) 45%,  oklch(62% .11 70));
     --shadow-gold: 0 20px 60px -20px oklch(76% .12 80 / .45);
 
 
@@ -175,4 +176,28 @@ span.section-subtitle{
   width: 28px;
   height: 28px;
   fill: white
+}
+
+
+.ComonBtn a{
+  background: var(--gradient-gold);
+  box-shadow: var(--shadow-gold);
+  border-radius: 99px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-family: var(--primary-font);
+  color: var(--primary-foreground);
+  background: var(--gradient-gold);
+  letter-spacing: 3.1px;
+  border-radius: 99px;
+  padding: 6px 30px;
+  font-weight: 500;
+  transition: all .3s ease-in-out;
+  &:hover{
+    background: var(--gradient-gold-hover);
+  }
+
 }
