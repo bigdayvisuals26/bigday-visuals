@@ -6,11 +6,16 @@ import Link from 'next/link';
 import { FaFacebook, FaGlobe, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { FaSquareXTwitter } from 'react-icons/fa6';
 import { LuMoveUpRight } from 'react-icons/lu';
+import Image from 'next/image';
 
 function Footer() {
   return (
     <>
     <footer className='FooterSection'>
+
+        <div className="pxl-divider-border-top">
+
+        </div>
 
         <div className="tp">
             <Container fluid className="container-xl">
@@ -26,18 +31,33 @@ function Footer() {
                         </ul>
                     </div>
 
-                    <div className="MidFtr">
-                        <div className="d">
-                            <div className="f"></div>
-                            <div className="f">
-                                <div className="f">
-                                    <h6>SIGN UP FOR ALL THE LATEST <br /> NEWS AND OFFERS</h6>
-                                </div>
-                                <div className="f">
-                                    <Form.Control type="email" placeholder="Enter Email Adress" />
-                                    <Button>Subcribe <LuMoveUpRight /></Button>
-                                </div>
-                            </div>
+                    
+
+
+                    <div className="newsletter">
+                        
+                        <div className="newsletter__logo" aria-label="bigdayVisuals">
+                            <Image src="/Images/logo.png" alt="BigDayVisuals" width={95} height={73} priority />
+                        </div>
+
+                        <div className="newsletter__frame">
+                            <h2 className="newsletter__heading">
+                                SIGN UP FOR ALL THE LATEST NEWS
+                                <br />
+                                AND OFFERS
+                            </h2>
+
+                            <Form className="newsletter__form">
+                                <Form.Control
+                                type="email"
+                                placeholder="Enter your mail"
+                                aria-label="Email address"
+                                required
+                                />
+                                <Button type="submit">
+                                SUBSCRIBE <span aria-hidden="true">↗</span>
+                                </Button>
+                            </Form>
                         </div>
                     </div>
 

@@ -42,7 +42,7 @@
     --primary: oklch(76% .12 80);
     --primary-foreground: #080706;
     --secondary: oklch(21% .01 70);
-    --secondary-foreground: oklch(95% .015 85);
+    --secondary-foreground: #f3eee3;
     --muted: oklch(21% .01 70);
     --muted-foreground: oklch(68% .02 80);
     --accent: oklch(24% .02 75);
