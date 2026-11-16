@@ -1,0 +1,195 @@
+.static-reviews-section {
+  --sr-bg: #0a0908;
+  --sr-surface: #14110e;
+  --sr-gold: #d5a75c;
+  --sr-cream: #f4eee5;
+  --sr-muted: #bcb2a6;
+  background: var(--sr-bg);
+  color: var(--sr-cream);
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  overflow: hidden;
+}
+.static-reviews-eyebrow {
+  color: var(--sr-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0 0 0.8rem;
+}
+.static-reviews-title {
+  font:
+    400 clamp(2.2rem, 4.3vw, 3.8rem)/1.08 Georgia,
+    serif;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.9rem;
+}
+.static-reviews-subtitle {
+  color: var(--sr-muted);
+  font-size: 1rem;
+  margin: 0;
+  max-width: 42rem;
+}
+.static-reviews-count {
+  display: inline-block;
+  color: var(--sr-gold);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.static-reviews-demo-note {
+  border-left: 2px solid var(--sr-gold);
+  background: rgba(213, 167, 92, 0.08);
+  color: var(--sr-muted);
+  padding: 0.8rem 1rem;
+  margin: 0 0 1.3rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.static-review-card {
+  background: var(--sr-surface);
+  border: 1px solid rgba(213, 167, 92, 0.2);
+  border-radius: 1rem;
+  color: var(--sr-cream);
+  min-height: 17rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+.static-review-card .card-body {
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  display: flex;
+  flex-direction: column;
+}
+.static-review-topline,
+.static-review-bottomline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.static-review-occasion {
+  color: var(--sr-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.static-review-sample-tag,
+.static-review-google-tag {
+  color: var(--sr-gold);
+  font-size: 0.73rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.static-review-stars {
+  display: inline-flex;
+  gap: 0.13rem;
+  color: rgba(255, 255, 255, 0.24);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  margin-top: 1.45rem;
+}
+.static-review-stars .is-filled {
+  color: var(--sr-gold);
+}
+.static-review-copy {
+  font:
+    400 clamp(1.15rem, 2.1vw, 1.5rem)/1.6 Georgia,
+    serif;
+  margin: 1rem 0 1.4rem;
+  max-width: 58rem;
+  color: #f0e9df;
+}
+.static-review-bottomline {
+  margin-top: auto;
+}
+.static-review-author {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.static-review-date,
+.static-review-pagination {
+  color: var(--sr-muted);
+  font-size: 0.75rem;
+  margin-top: 0.14rem;
+}
+.static-review-controls p {
+  color: var(--sr-muted);
+  line-height: 1.7;
+  max-width: 19rem;
+  margin: 0 0 1.2rem;
+}
+.static-review-autoplay {
+  display: block;
+  color: var(--sr-gold);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+}
+.static-review-google-tag:hover {
+  color: #f0cc8e;
+}
+.static-review-carousel .carousel-indicators {
+  position: static;
+  margin: 1rem 0 0;
+  gap: 0.4rem;
+}
+.static-review-carousel .carousel-indicators [data-bs-target] {
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--sr-muted);
+  opacity: 0.45;
+  margin: 0;
+}
+.static-review-carousel .carousel-indicators .active {
+  background: var(--sr-gold);
+  opacity: 1;
+}
+.static-review-carousel .carousel-control-prev,
+.static-review-carousel .carousel-control-next {
+  width: 3rem;
+  opacity: 0.9;
+}
+.static-review-carousel .carousel-control-prev-icon,
+.static-review-carousel .carousel-control-next-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
+}
+.static-review-carousel .carousel-control-prev:hover,
+.static-review-carousel .carousel-control-next:hover {
+  opacity: 1;
+}
+@media (max-width: 991.98px) {
+  .static-review-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .static-review-controls p {
+    margin: 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .static-reviews-section {
+    padding: 3.5rem 0;
+  }
+  .static-review-card {
+    min-height: unset;
+  }
+  .static-review-bottomline {
+    align-items: flex-start;
+  }
+  .static-review-controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .static-review-controls p {
+    max-width: none;
+  }
+  .static-review-carousel .carousel-control-prev,
+  .static-review-carousel .carousel-control-next {
+    width: 2.25rem;
+  }
+}

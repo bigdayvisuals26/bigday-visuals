@@ -11,6 +11,7 @@ import Image from 'next/image';
 function Footer() {
   return (
     <>
+    
     <footer className='FooterSection'>
 
         <div className="pxl-divider-border-top">

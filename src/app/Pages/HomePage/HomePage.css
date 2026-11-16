@@ -113,6 +113,75 @@
 }
 
 
+/* WeCaptureSec Started  */
+
+.WeCaptureSec{
+    padding: 100px 0px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+.WeCaptureSec .WeCaptureData{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+}
+.WeCaptureSec .WeCaptureData .LeftCapture{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.WeCaptureSec .WeCaptureData .LeftCapture em{
+    font-family: var(--primary-font);
+    letter-spacing: 4.8px;
+    font-style: normal;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 400;
+}
+.WeCaptureSec .WeCaptureData .LeftCapture h2{
+    color: var(--secondary-foreground);
+    font-size: 60px;
+    font-weight: 400;
+}
+.WeCaptureSec .WeCaptureData .LeftCapture h2 span{
+    background: var(--gradient-gold);
+    color: #0000;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-style: italic;
+}
+.WeCaptureSec .WeCaptureData .LeftCapture p{
+    color: var(--muted-foreground);
+    line-height: 1.625;
+    font-family: var(--primary-font);
+    max-width: 448px;
+}
+.WeCaptureSec .WeCaptureData .RightCapture{
+    display: flex;
+    justify-content: center;
+    
+}
+.WeCaptureSec .WeCaptureData .RightCapture .wecaptimg img{
+    background-color: var(--ivory);
+    box-shadow: var(--shadow-gold);
+    
+}
+.WeCaptureSec .WeCaptureData .RightCapture .wecaptimg img{
+    width: 100%;
+    max-width: 100%;
+    max-height: 550px;
+    height: auto;
+    border-radius: 32px;
+    
+}
+
+
+/* WeCaptureSec Ended */
+
 
 
 

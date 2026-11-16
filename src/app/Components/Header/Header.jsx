@@ -16,6 +16,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
 
 import "./Header.css";
@@ -45,6 +46,7 @@ function Header() {
               <Link target="_blank" href="https://www.facebook.com/share/19kad4iZny/"><FaFacebookF /></Link>
               <Link target="_blank" href="https://www.instagram.com/bigdayvisuals?dlrf=aGlyNng3Zjlpam56"><FaInstagram /></Link>
               <Link target="_blank" href="https://wa.me/919914994135"><FaWhatsapp /></Link>
+              <Link target="_blank" href="#"><FaYoutube /></Link>
             </div>
             <div className="marquee">
 

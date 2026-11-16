@@ -18,6 +18,7 @@ import "glightbox/dist/css/glightbox.min.css";
 import CountUp from "react-countup";
 import { BiMessageRounded } from "react-icons/bi";
 import VideoShowcase from "@/app/Components/VideoShowcase/VideoShowcase";
+import GoogleReviews from "@/app/Components/GoogleReview/GoogleReviews";
 
 function HomePage() {
   const [selectedValue, setSelectedValue] = useState("");
@@ -268,7 +269,7 @@ function HomePage() {
   return (
     <>
 
-    <Link
+      <Link
         href="https://wa.me/916280035719"
         target="_blank"
         className="wa-float"
@@ -331,7 +332,34 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="WeCaptureSec">
+        <Container fluid className="container-xl">
+          <div className="WeCaptureData">
+
+            <div className="LeftCapture">
+              <em>We capture · You celebrate</em>
+              <h2>We tell <span>your story</span>, <br /> frame by frame.</h2>
+              <p>Bigday Visuals is a Pathankot studio founded by two brothers who believe every celebration deserves to be remembered like cinema — weddings, birthdays, maternity and every special occasion in between.</p>
+            </div>
+            <div className="RightCapture">
+
+              <div className="wecaptimg">
+                <Image className="animated" src="/Images/wecapture2.jpg" alt="" width={900} height={900} priority />
+              </div>
+
+            </div>
+
+
+
+
+
+          </div>
+        </Container>
+      </section>
+
        <Skiper49/>
+
+       <GoogleReviews/>
 
        <VideoShowcase/>
 
