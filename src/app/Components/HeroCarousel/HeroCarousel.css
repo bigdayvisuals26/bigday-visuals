@@ -1,6 +1,33 @@
-/* =========================================
-   MAIN SECTION
-========================================= */
+.SelectedWorkSec{
+  padding: 100px 0;
+  background: var(--foreground);
+}
+.SelectedWorkSec .SeltedWorkData{
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+}
+.SelectedWorkSec .SeltedWorkData .SlectTexed{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+}
+.SelectedWorkSec .SeltedWorkData .SlectTexed h2{
+  font-family: var(--primary-font);
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 58px;
+}
+.SelectedWorkSec .SeltedWorkData .SlectTexed h2 span{
+  color: var(--gold);
+}
+.SelectedWorkSec .SeltedWorkData .SlectTexed p{
+  font-family: var(--primary-font);
+  color: var(--secondary);
+  font-weight: 400;
+  font-size: 18px;
+  text-align: end;
+}
 
 .skiper-section {
   width: 100%;

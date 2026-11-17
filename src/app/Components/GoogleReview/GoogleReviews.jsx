@@ -1,13 +1,11 @@
 'use client';
-
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Card, Carousel, Col, Container, Row } from 'react-bootstrap';
 import { gsap } from 'gsap';
 import './GoogleReviews.css';
 
-// Replace these clearly marked examples with genuine customer reviews before publishing.
-// For each real Google review, add its author, exact text, rating, date, and Google Maps review URL.
+
 const REVIEWS = [
   {
     id: 'demo-1',
@@ -93,8 +91,8 @@ export default function GoogleReviews({
   if (!items.length) return null;
 
   return (
-    <section className="static-reviews-section" ref={sectionRef} aria-labelledby="static-reviews-title">
-      <Container>
+    <section className="static-reviews-section" ref={sectionRef}>
+      <Container fluid className='container-xl'>
         <Row className="align-items-end gy-4 mb-4 mb-lg-5">
           <Col lg={8} ref={headingRef}>
             <p className="static-reviews-eyebrow">Bigday Visuals · Client stories</p>

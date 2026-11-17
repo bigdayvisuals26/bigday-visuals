@@ -6,7 +6,7 @@
 .FooterSection .tp{
    background: var(--background);
     border-bottom: 1px solid var(--border);
-    padding: 142px 0px 81px 0px;
+    padding: 81px 0px ;
 }
 .FooterSection .tp .TopFooter{
     display: grid;
@@ -25,11 +25,13 @@
     gap: 22px;
 }
 .FooterSection .tp .TopFooter :is(.LeftFtr ul li a, .RytFtr ul li a ){
-    color: var(--muted-foreground);
-    font-size: 18px;
-    font-weight: 600;
+    color: var(--card-foreground);
+    font-size: 16px;
+    font-weight: 500;
     text-transform: uppercase;
     border-bottom: 1px solid var(--muted-foreground);
+    font-family: var(--primary-font);
+    letter-spacing: 3.6px;
     position: relative;
     &::after{
         position: absolute;
@@ -174,7 +176,7 @@
   height: 57px;
   margin: 0 auto;
   overflow: hidden;
-  border: 2px solid var(--muted-foreground);
+  border: 2px solid var(--primary-foreground);
   border-radius: 30px;
 }
 

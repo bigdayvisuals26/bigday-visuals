@@ -18,52 +18,55 @@ import "swiper/css/pagination";
 
 import "./HeroCarousel.css";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import Image from "next/image";
+import { Container } from "react-bootstrap";
 
 const images = [
   {
-    src: "/images/13.jpeg",
+    src: "/Images/Gallery/4.avif",
     alt: "Illustration 1",
   },
   {
-    src: "/images/32.jpeg",
-    alt: "Illustration 2",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/20.jpeg",
-    alt: "Illustration 3",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/21.jpeg",
-    alt: "Illustration 4",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/19.jpeg",
-    alt: "Illustration 5",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/1.jpeg",
-    alt: "Illustration 6",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/2.jpeg",
-    alt: "Illustration 7",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/3.jpeg",
-    alt: "Illustration 8",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/4.jpeg",
-    alt: "Illustration 9",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/5.jpeg",
-    alt: "Illustration 10",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/6.jpeg",
-    alt: "Illustration 11",
+    src: "/Images/Gallery/4.avif",
+    alt: "Illustration 1",
   },
+  
 ];
 
 const Carousel = ({
@@ -152,11 +155,8 @@ const Carousel = ({
               key={`${image.src}-${index}`}
               className="custom-swiper-slide"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="carousel-image"
-              />
+              <Image className="carousel-image" src={image.src} alt={image.alt} width={900} height={900} priority />
+             
             </SwiperSlide>
           ))}
 
@@ -187,15 +187,25 @@ const Carousel = ({
 
 const Skiper49 = () => {
   return (
-    <section className="skiper-section">
-      <Carousel
-        images={images}
-        showPagination={true}
-        showNavigation={true}
-        loop={true}
-        autoplay={true}
-        spaceBetween={0}
-      />
+    <section className="SelectedWorkSec">
+      <Container fluid className="container-xl">
+
+        <div className="SeltedWorkData">
+
+          <div className="SlectTexed">
+            <h2>Selected <span>Work</span></h2>
+            <p>Tap any film to watch it on our YouTube, Instagram <br /> or Facebook.</p>
+          </div>
+
+          <div className="SlectCrosel">
+            <Carousel images={images} showPagination={true} showNavigation={true} loop={true} autoplay={true} spaceBetween={0}/>
+          </div>
+
+
+        </div>
+
+      </Container>
+      
     </section>
   );
 };

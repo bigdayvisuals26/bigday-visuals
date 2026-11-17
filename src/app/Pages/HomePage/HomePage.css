@@ -457,7 +457,7 @@
 
 .GallerySec {
   padding: 100px 0;
-  background: var(--gradient-gold);
+  background: var(--foreground);
   min-height: 100vh;
 }
 .GallerySec .GalleryData {
