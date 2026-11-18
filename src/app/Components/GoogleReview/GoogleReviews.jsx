@@ -9,19 +9,19 @@ import './GoogleReviews.css';
 const REVIEWS = [
   {
     id: 'demo-1',
-    author: 'Sample Client 01',
+    author: 'Anil Kumar',
     occasion: 'Wedding photography',
     rating: 5,
-    date: 'Sample review',
+    date: '23/02/2026',
     text: 'The team made our special day feel relaxed and captured so many moments we will always treasure.',
     sourceUrl: '',
     isDemo: true,
   },
   {
     id: 'demo-2',
-    author: 'Sample Client 02',
+    author: 'xyz',
     occasion: 'Pre-wedding shoot',
-    rating: 5,
+    rating: 3,
     date: 'Sample review',
     text: 'We felt comfortable throughout the shoot, and the photos told our story beautifully.',
     sourceUrl: '',
@@ -29,7 +29,7 @@ const REVIEWS = [
   },
   {
     id: 'demo-3',
-    author: 'Sample Client 03',
+    author: 'yzx',
     occasion: 'Birthday celebration',
     rating: 5,
     date: 'Sample review',
@@ -91,93 +91,49 @@ export default function GoogleReviews({
   if (!items.length) return null;
 
   return (
-    <section className="static-reviews-section" ref={sectionRef}>
+    <section className="GoogleReviewSec" ref={sectionRef}>
       <Container fluid className='container-xl'>
-        <Row className="align-items-end gy-4 mb-4 mb-lg-5">
-          <Col lg={8} ref={headingRef}>
-            <p className="static-reviews-eyebrow">Bigday Visuals · Client stories</p>
-            <h2 id="static-reviews-title" className="static-reviews-title">{title}</h2>
-            <p className="static-reviews-subtitle">{subtitle}</p>
-          </Col>
-          <Col lg={4} className="text-lg-end">
-            <span className="static-reviews-count">{items.length} {items.length === 1 ? 'story' : 'stories'}</span>
-          </Col>
-        </Row>
-
-        {hasDemoContent && (
-          <div className="static-reviews-demo-note" role="note">
-            Sample testimonials for preview — replace with genuine customer reviews before publishing.
+        <div className="ReviewData" >
+          <div className="TopReview"  ref={headingRef}>
+            <div className="ReviewHeading">
+              <em>Bigday Visuals · Client stories</em>
+              <h2>{title}</h2>
+              <p>{subtitle}</p>
+            </div>
+            <div className="ReviewStory">
+              <p><span>{items.length} </span> {items.length === 1 ? 'story' : 'stories'}</p>
+            </div>
           </div>
-        )}
-
-        <Row className="align-items-center g-4">
-          <Col lg={8}>
+          <div className="BottomReview">
             <div
-              className="static-review-slider"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              onFocusCapture={() => setIsPaused(true)}
+              className="static-review-slider"  onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onFocusCapture={() => setIsPaused(true)}
               onBlurCapture={(event) => {
                 if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
-              }}
-              role="region"
-              aria-roledescription="carousel"
-              aria-label="Client testimonials; pauses on hover or keyboard focus"
-            >
-              <Carousel
-                activeIndex={activeIndex}
-                onSelect={(index) => setActiveIndex(index)}
-                interval={null}
-                controls={items.length > 1}
-                indicators={items.length > 1}
-                keyboard
-                pause={false}
-                touch
-                wrap
-                className="static-review-carousel"
-              >
+              }} role="region" aria-roledescription="carousel" aria-label="Client testimonials; pauses on hover or keyboard focus" >
+              <Carousel activeIndex={activeIndex} onSelect={(index) => setActiveIndex(index)}
+                interval={null} controls={items.length > 1} indicators={items.length > 1} keyboard pause={false} touch wrap className="static-review-carousel">
                 {items.map((review, index) => (
                   <Carousel.Item key={review.id || index}>
-                    <motion.div
-                      initial={false}
-                      animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-                      whileHover={reduceMotion ? undefined : { y: -2 }}
-                      transition={{ duration: 0.25, ease: 'easeOut' }}
-                    >
                       <Card className="static-review-card">
                         <Card.Body>
-                          <div className="static-review-topline">
-                            <span className="static-review-occasion">{review.occasion}</span>
-                            {review.isDemo ? (
-                              <span className="static-review-sample-tag">Sample</span>
-                            ) : review.sourceUrl ? (
-                              <a className="static-review-google-tag" href={review.sourceUrl} target="_blank" rel="noreferrer">Google review ↗</a>
-                            ) : null}
-                          </div>
+                          <h6>{review.occasion}</h6>
                           <Stars rating={review.rating} />
                           <Card.Text className="static-review-copy">“{review.text}”</Card.Text>
                           <div className="static-review-bottomline">
-                            <div>
-                              <strong className="static-review-author">{review.author}</strong>
-                              <div className="static-review-date">{review.date}</div>
+                            <div className='AuthorDiv'>
+                              <h4>{review.author}</h4>
+                              <p>{review.date}</p>
                             </div>
-                            <span className="static-review-pagination">{index + 1} / {items.length}</span>
+                            <p className="static-review-pagination">{index + 1} / {items.length}</p>
                           </div>
                         </Card.Body>
                       </Card>
-                    </motion.div>
                   </Carousel.Item>
                 ))}
               </Carousel>
             </div>
-          </Col>
-          <Col lg={4}>
-            <div className="static-review-controls">
-              <p>Real moments, remembered in their own words.</p>
-              <span className="static-review-autoplay">Auto-slides every 7 seconds · hover to pause</span>
-            </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
       </Container>
     </section>
   );

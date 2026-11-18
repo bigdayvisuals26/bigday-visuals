@@ -400,6 +400,7 @@
     position: relative;
     background: var(--card);
     border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 .WhatWeDoSection .WhatWeDoData{
     display: flex;
@@ -459,6 +460,8 @@
     padding: 100px 0;
     background: var(--card);
     min-height: 100vh;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 .GallerySec .GalleryData {
     display: flex;

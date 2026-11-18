@@ -526,7 +526,7 @@ function HomePage() {
         </Container>
       </section>
 
-      <GoogleReviews/>
+      
 
       <section className="NextGenSection">
         <Container fluid className="container-xl">
@@ -560,6 +560,8 @@ function HomePage() {
       </section>
 
       <WeddingPackages/>
+
+      <GoogleReviews/>
       
      
       <section className="ContactSection">

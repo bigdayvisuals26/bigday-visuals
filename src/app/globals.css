@@ -35,7 +35,7 @@
 
     --background: oklch(13% .005 70);
     --foreground: oklch(95% .015 85);
-    --card: oklch(17% .008 70);
+    --card: #120f0c;
     --card-foreground: oklch(95% .015 85);
     --popover: oklch(17% .008 70);
     --popover-foreground: oklch(95% .015 85);
