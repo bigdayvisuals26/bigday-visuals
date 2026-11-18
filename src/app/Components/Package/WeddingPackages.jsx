@@ -64,7 +64,6 @@ export default function WeddingPackages() {
           </div>
 
           <div className="PackagedGrid">
-
             {packages.map((pkg, index) => (
               <article
                 className={`package-card${pkg.featured ? " package-card-featured" : ""}`}
@@ -88,10 +87,6 @@ export default function WeddingPackages() {
                 </Link>
               </article>
             ))}
-
-
-
-
           </div>
           <p className="packages-note">Every wedding is wonderfully different. Get in touch for a collection tailored to your dates, venue and celebration.</p>
 

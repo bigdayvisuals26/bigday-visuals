@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+.bigday-founders {
+  --bd-ink: #f4efe7;
+  --bd-muted: #b9b0a5;
+  --bd-gold: #d6a85f;
+  --bd-panel: #191713;
+  --bd-line: rgba(244, 239, 231, 0.12);
+  background: #100f0d;
+  color: var(--bd-ink);
+  padding: clamp(76px, 9vw, 132px) 0;
+  font-family: 'DM Sans', sans-serif;
+  overflow: hidden;
+}
+
+.bigday-founders .container { max-width: 1120px; }
+.bigday-founders__intro { max-width: 790px; margin: 0 auto 62px; text-align: center; }
+.bigday-founders__eyebrow {
+  display: inline-block;
+  color: var(--bd-gold);
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.bigday-founders h2,
+.bigday-founders h3,
+.bigday-founder h3 {
+  color: var(--bd-ink);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+}
+.bigday-founders__intro h2 { font-size: clamp(2.6rem, 6vw, 4.65rem); line-height: 1.08; margin: 0 0 20px; }
+.bigday-founders__lead { color: var(--bd-muted); font-size: 1.08rem; line-height: 1.85; margin: 0 auto; max-width: 710px; }
+.bigday-founders__lead strong { color: var(--bd-ink); font-weight: 600; }
+
+.bigday-founder {
+  background: var(--bd-panel);
+  border: 1px solid var(--bd-line);
+  border-radius: 18px;
+  height: 100%;
+  overflow: hidden;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.bigday-founder:hover { border-color: rgba(214, 168, 95, .52); transform: translateY(-4px); }
+.bigday-founder__portrait { height: 300px; overflow: hidden; position: relative; background: #25211b; }
+.bigday-founder__portrait::after {
+  background: linear-gradient(180deg, transparent 55%, rgba(16, 15, 13, .55));
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+.bigday-founder__portrait--1 { background: radial-gradient(ellipse at 72% 28%, #9a7453 0, #504334 37%, #24201a 78%); }
+.bigday-founder__portrait--2 { background: radial-gradient(ellipse at 30% 28%, #b08b63 0, #514437 37%, #24201a 78%); }
+.bigday-founder__portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bigday-founder__portrait-placeholder { align-items: center; color: rgba(255,255,255,.85); display: flex; flex-direction: column; height: 100%; justify-content: center; position: relative; }
+.bigday-founder__portrait-placeholder span {
+  align-items: center;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 50%;
+  display: flex;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  height: 116px;
+  justify-content: center;
+  width: 116px;
+}
+.bigday-founder__portrait-placeholder small { color: rgba(255,255,255,.7); font-size: .72rem; letter-spacing: .08em; margin-top: 12px; text-transform: uppercase; }
+.bigday-founder__portrait-mark { bottom: 13px; color: rgba(255,255,255,.7); font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-style: italic; position: absolute; right: 18px; z-index: 1; }
+.bigday-founder__details { padding: 28px 30px 30px; }
+.bigday-founder__role { color: var(--bd-gold); font-size: .76rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+.bigday-founder h3 { font-size: 2rem; margin: 8px 0 3px; }
+.bigday-founder__experience { color: #d4c9ba; font-size: .88rem; }
+.bigday-founder__details p { color: var(--bd-muted); line-height: 1.75; margin: 18px 0 20px; }
+.bigday-founder blockquote { border-left: 2px solid var(--bd-gold); color: var(--bd-ink); font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-style: italic; margin: 0; padding: 3px 0 3px 15px; }
+
+.bigday-founders__vision { border-bottom: 1px solid var(--bd-line); border-top: 1px solid var(--bd-line); margin: 76px 0 72px; padding: 48px 6%; text-align: center; }
+.bigday-founders__vision h3 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin: 0 auto 17px; }
+.bigday-founders__vision p { color: var(--bd-muted); line-height: 1.85; margin: 0 auto; max-width: 800px; }
+.bigday-founders__skills { margin-bottom: 78px; }
+.bigday-founders__skills-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 31px; }
+.bigday-founders__skills-heading h3 { font-size: 2rem; margin: 0; }
+.bigday-founders__skills-heading > p { color: var(--bd-muted); margin: 0 0 4px 20px; }
+.bigday-skill__label { color: var(--bd-ink); display: flex; font-size: .9rem; justify-content: space-between; margin-bottom: 10px; }
+.bigday-skill__label span:last-child { color: var(--bd-gold); }
+.bigday-founders .progress { background: #302b24; border-radius: 99px; height: 7px; overflow: hidden; }
+.bigday-founders .progress-bar { background: linear-gradient(90deg, #ae7e3d, var(--bd-gold)); border-radius: 99px; }
+.bigday-founders__skills-note { color: #81796f; font-size: .76rem; margin: 20px 0 0; }
+
+.bigday-founders__contact { align-items: center; background: #1b1915; border: 1px solid var(--bd-line); border-radius: 18px; display: flex; justify-content: space-between; gap: 24px; padding: 34px 40px; }
+.bigday-founders__contact .bigday-founders__eyebrow { margin-bottom: 8px; }
+.bigday-founders__contact h3 { font-size: 2rem; margin: 0 0 8px; }
+.bigday-founders__contact p { color: var(--bd-muted); margin: 0; }
+.bigday-founders__button,
+.bigday-founders__button:hover,
+.bigday-founders__button:focus { background: var(--bd-gold); border: 1px solid var(--bd-gold); border-radius: 999px; color: #17130e; flex: 0 0 auto; font-weight: 700; padding: 13px 22px; }
+.bigday-founders__button span { font-size: 1.1rem; margin-left: 8px; }
+
+@media (max-width: 767.98px) {
+  .bigday-founders__intro { margin-bottom: 42px; }
+  .bigday-founder__portrait { height: 260px; }
+  .bigday-founders__vision { margin: 54px 0; padding: 38px 0; }
+  .bigday-founders__skills-heading { align-items: start; display: block; }
+  .bigday-founders__skills-heading > p { margin: 12px 0 0; }
+  .bigday-founders__skills { margin-bottom: 56px; }
+  .bigday-founders__contact { align-items: flex-start; flex-direction: column; padding: 28px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bigday-founder { transition: none; }
+  .bigday-founder:hover { transform: none; }
+}

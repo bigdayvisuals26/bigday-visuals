@@ -20,6 +20,7 @@ import { BiMessageRounded } from "react-icons/bi";
 import VideoShowcase from "@/app/Components/VideoShowcase/VideoShowcase";
 import GoogleReviews from "@/app/Components/GoogleReview/GoogleReviews";
 import WeddingPackages from "@/app/Components/Package/WeddingPackages";
+import BigdayFounders from "@/app/Components/Founder/BigdayFounders";
 
 function HomePage() {
   const [selectedValue, setSelectedValue] = useState("");
@@ -462,7 +463,7 @@ function HomePage() {
 
       
 
-      <AboutUs/>
+      <BigdayFounders/>
 
       <section className="GallerySec" id="Services">
         <Container fluid className="container-xl">
@@ -470,10 +471,9 @@ function HomePage() {
           <div className="GalleryData">
 
             <div className="GalleryHeading">
-              <span>Our Collection</span>
-              <h2>Discover Beautiful Furniture</h2>
-              <p> Explore our premium collection of handcrafted furniture designed
-                for comfort, elegance, and modern living.</p>
+              <span>Our Gallery</span>
+              <h2>Stories, Beautifully Captured</h2>
+              <p> Explore a collection of heartfelt moments, thoughtful portraits, <br /> and celebrations captured with care.</p>
             </div>
 
             <div className="GalleryFilter">

@@ -456,38 +456,45 @@
 /* Gallery Started  */
 
 .GallerySec {
-  padding: 100px 0;
-  background: var(--foreground);
-  min-height: 100vh;
+    padding: 100px 0;
+    background: var(--card);
+    min-height: 100vh;
 }
 .GallerySec .GalleryData {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
 .GallerySec .GalleryData .GalleryHeading{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
 }
 .GallerySec .GalleryData .GalleryHeading span{
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--SpanPrimaryColor);
+    background: var(--gradient-gold);
+    color: #0000;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: var(--primary-font);
+    font-size: 24px;
 }
 .GallerySec .GalleryData .GalleryHeading h2{
-  color: var(--text-primary);
-  font-family: var(--serif);
-  font-size: 64px;
+    color: var(--foreground);
+    font-family: var(--primary-font);
+    font-size: 64px;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 .GallerySec .GalleryData .GalleryHeading p{
-  color: var(--text-secondary);
-  font-size: 22px;
-  text-align: center;
-  max-width: 700px;
+    color: var(--muted-foreground);
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+    max-width: 700px;
+    font-family: var(--primary-font);
+    letter-spacing: 1.6px;
 }
 .GallerySec .GalleryData .GalleryFilter {
   display: flex;
@@ -497,19 +504,22 @@
 }
 
 .GallerySec .GalleryData .GalleryFilter button {
-  padding: 12px 25px;
-  border: none;
-  background: #f2f2f2;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    background: var(--gradient-gold);
+    font-family: var(--primary-font);
+    letter-spacing: 1.6px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 .GallerySec .GalleryData .GalleryFilter button.active,
 .GallerySec .GalleryData .GalleryFilter button:hover {
-  background: var(--SpanPrimaryColor);
-  color: #fff;
+  background: var(--secondary-foreground);
+  color: var(--primary-foreground);
 }
 .GallerySec .GalleryData .GalleryCardDiv{
     display: grid;
