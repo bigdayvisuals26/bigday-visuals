@@ -85,7 +85,6 @@ function HomePage() {
     return () => window.removeEventListener("focus", refreshStats);
   }, []);
 
-
   // Gallery Data Started  
 
   const galleryData = [
@@ -545,7 +544,6 @@ function HomePage() {
               <h4>
                 <CountUp
                   key={`${item.id}-${statsRefreshKey}`}
-                  start={0}
                   end={item.value}
                   duration={2.5}
                   enableScrollSpy={true}

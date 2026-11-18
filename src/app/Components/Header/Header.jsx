@@ -82,9 +82,10 @@ function Header() {
 
         <Container fluid className="container-xl">
 
-          <Navbar.Brand href="#" className="NavLogoDiv">
-            <Link href="/"><Image src="/Images/logo.png" alt="BigDayVisuals" width={95} height={73} priority /></Link>
+          <Navbar.Brand as={Link} href="/" className="NavLogoDiv">
+            <Image src="/Images/logo.png" alt="BigDayVisuals" width={95} height={73} />
           </Navbar.Brand>
+          
 
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
 
